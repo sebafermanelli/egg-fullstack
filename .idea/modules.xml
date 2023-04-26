@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/intro-java-egg.iml" filepath="$PROJECT_DIR$/intro-java-egg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-egg.iml" filepath="$PROJECT_DIR$/java-egg.iml" />
     </modules>
   </component>
 </project>
