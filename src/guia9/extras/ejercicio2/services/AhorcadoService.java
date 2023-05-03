@@ -66,10 +66,11 @@ public class AhorcadoService {
                 System.out.print("La letra pertenece a la palabra");
             } else {
                 System.out.print("La letra no pertenece a la palabra");
+                intentos(juego);
             }
             System.out.println();
             System.out.println("Numero de letras (encontradas, faltantes): (" + encontradas(juego, letra) + "," + (juego.getPalabra().length - juego.getCantLetrasEncontradas()) + ")");
-            System.out.println("Numero de oportunidades restantes: " + intentos(juego));
+            System.out.println("Numero de oportunidades restantes: " + juego.getCantJugadasMax());
         } while (juego.getCantJugadasMax() != 0 && juego.getCantLetrasEncontradas() != juego.getPalabra().length);
 
         if (juego.getCantLetrasEncontradas() == juego.getPalabra().length) {

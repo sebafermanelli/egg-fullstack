@@ -3,12 +3,11 @@ package integrador;
 import integrador.entities.Estudiante;
 import integrador.services.EstudianteService;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Core {
     public static void main(String[] args) {
-        Estudiante[] estudiantes = new Estudiante[8];
+        Estudiante[] estudiantes = new Estudiante[3];
         for (int i = 0; i < estudiantes.length; i++) {
             estudiantes[i] = EstudianteService.crearEstudiante();
         }
