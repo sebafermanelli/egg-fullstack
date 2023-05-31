@@ -3,7 +3,7 @@ package guia7.ejercicio2;
 import java.util.Scanner;
 
 public class Circunferencia {
-    
+
     private double radio;
 
     Circunferencia() {
@@ -13,12 +13,12 @@ public class Circunferencia {
         this.radio = radio;
     }
 
-    public void setRadio(double radio) {
-        this.radio = radio;
-    }
-
     public double getRadio() {
         return this.radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
     }
 
     public double area() {

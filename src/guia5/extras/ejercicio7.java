@@ -3,7 +3,7 @@ package guia5.extras;
 import java.util.Scanner;
 
 public class ejercicio7 {
-    
+
     public static void main(String[] args) {
         int n;
 
@@ -22,19 +22,17 @@ public class ejercicio7 {
         for (int i = 0; i < sucesion.length; i++) {
             if (i <= 1) {
                 sucesion[i] = 1;
-            }
-            else {
-                sucesion[i] = sucesion[i-1] + sucesion[i-2];
+            } else {
+                sucesion[i] = sucesion[i - 1] + sucesion[i - 2];
             }
         }
     }
 
     public static void MostrarVector(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
-            if (i == (vector.length-1)) {
+            if (i == (vector.length - 1)) {
                 System.out.print(vector[i]);
-            }
-            else {
+            } else {
                 System.out.print(vector[i] + ", ");
             }
         }

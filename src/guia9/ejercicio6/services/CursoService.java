@@ -40,7 +40,7 @@ public class CursoService {
     public static String[] cargarAlumnos(Curso curso) {
         String[] alumnos = new String[curso.getAlumnos().length];
         for (int i = 0; i < alumnos.length; i++) {
-            System.out.print("Ingrese el nombre del alumno " + (i+1) + ": ");
+            System.out.print("Ingrese el nombre del alumno " + (i + 1) + ": ");
             alumnos[i] = scanner.nextLine();
         }
         return alumnos;

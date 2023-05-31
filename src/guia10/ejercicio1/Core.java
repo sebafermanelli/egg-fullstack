@@ -20,7 +20,7 @@ public class Core {
                 rta = scanner.next().toUpperCase().charAt(0);
             }
 
-            if(rta == 'N') {
+            if (rta == 'N') {
                 repeat = false;
             }
         } while (repeat);

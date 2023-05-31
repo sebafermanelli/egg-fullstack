@@ -23,7 +23,7 @@ public class FechaService {
         System.out.print("Ingrese el año de su nacimiento: ");
         int a = leer.nextInt();
 
-        return new Date(a-1900,m-1,d);
+        return new Date(a - 1900, m - 1, d);
     }
 
     public Date fechaActual() {

@@ -1,7 +1,7 @@
 package guia7.ejercicio4;
 
 public class Core {
-    
+
     public static void main(String[] args) {
         Rectangulo rect = new Rectangulo();
 

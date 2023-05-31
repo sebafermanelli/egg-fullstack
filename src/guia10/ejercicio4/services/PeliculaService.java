@@ -33,18 +33,18 @@ public class PeliculaService {
             } while ((rta != 'S') && (rta != 'N'));
 
             scanner.nextLine();
-        } while(rta == 'S');
+        } while (rta == 'S');
     }
 
     public void mostrarPeliculas() {
-        for (Pelicula p: peliculasList) {
+        for (Pelicula p : peliculasList) {
             System.out.println(p.toString());
         }
     }
 
     public void mostrarPeliculasMayorA1hs() {
-        for (Pelicula p: peliculasList) {
-            if(p.getDuracion() > 1) {
+        for (Pelicula p : peliculasList) {
+            if (p.getDuracion() > 1) {
                 System.out.println(p.toString());
             }
         }

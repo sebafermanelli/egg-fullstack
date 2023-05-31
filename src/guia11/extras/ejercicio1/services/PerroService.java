@@ -36,7 +36,7 @@ public class PerroService {
             do {
                 System.out.print("Desea ingresar otro perro? S/N: ");
                 rta = Core.scanner.next().toUpperCase().charAt(0);
-            } while(rta != 'S' && rta != 'N');
+            } while (rta != 'S' && rta != 'N');
 
             Core.scanner.nextLine();
         } while (rta == 'S');
@@ -48,7 +48,7 @@ public class PerroService {
 
     public void mostrarPerros() {
         System.out.println("Lista de perros:");
-        for (Perro p: perroList) {
+        for (Perro p : perroList) {
             System.out.println("Nombre: " + p.getNombre() + " - Raza: " + p.getRaza());
         }
     }

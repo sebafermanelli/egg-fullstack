@@ -75,8 +75,7 @@ public class AhorcadoService {
 
         if (juego.getCantLetrasEncontradas() == juego.getPalabra().length) {
             System.out.println("Ganaste!");
-        }
-        else {
+        } else {
             System.out.println("Perdiste!");
         }
     }

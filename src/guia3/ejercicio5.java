@@ -3,7 +3,7 @@ package guia3;
 import java.util.Scanner;
 
 public class ejercicio5 {
-    
+
     public static void main(String[] args) {
         int limite, num, suma;
 

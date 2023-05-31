@@ -29,8 +29,7 @@ public class CafeteraServices {
         cafetera.setCantidadActual(cafetera.getCantidadActual() - cantidad);
         if (cantidad != 0) {
             System.out.println("Se ha servido una taza con " + cantidad + "ml de cafe");
-        }
-        else {
+        } else {
             System.out.println("No hay agua para servir cafe");
         }
     }

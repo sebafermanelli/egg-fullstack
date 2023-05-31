@@ -23,8 +23,7 @@ public class ejercicio5 {
             for (int j = 0; j < matriz.length; j++) {
                 if (matriz[i][j] < 0) {
                     System.out.print(matriz[i][j] + " ");
-                }
-                else {
+                } else {
                     System.out.print(matriz[i][j] + "  ");
                 }
             }
@@ -38,8 +37,7 @@ public class ejercicio5 {
             for (int j = 0; j < matriz.length; j++) {
                 if (matriz[j][i] < 0) {
                     System.out.print(matriz[j][i] + " ");
-                }
-                else {
+                } else {
                     System.out.print(matriz[j][i] + "  ");
                 }
             }
@@ -57,8 +55,7 @@ public class ejercicio5 {
         System.out.println();
         if (antisimetrica) {
             System.out.println("La matriz es antisimetrica");
-        }
-        else {
+        } else {
             System.out.println("La matriz no es antisimetrica");
         }
     }

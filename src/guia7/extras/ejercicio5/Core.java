@@ -3,7 +3,7 @@ package guia7.extras.ejercicio5;
 import java.util.Scanner;
 
 public class Core {
-    
+
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         Empleado emp = new Empleado();

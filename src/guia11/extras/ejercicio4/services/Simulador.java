@@ -61,7 +61,7 @@ public class Simulador {
     }
 
     public void mostrarAlumnos(List<Alumno> alumnos) {
-        for (Alumno a: alumnos) {
+        for (Alumno a : alumnos) {
             System.out.println("(" + a.getDNI() + ") " + a.getNombre() + " - Votos: " + a.getVotos());
         }
     }
@@ -70,7 +70,7 @@ public class Simulador {
         List<Voto> votos = new ArrayList<Voto>();
         Random random = new Random();
 
-        for (Alumno votante: alumnos) {
+        for (Alumno votante : alumnos) {
             HashSet<Alumno> alumnosVotados = new HashSet<Alumno>();
             for (int i = 0; i < 3; i++) {
                 int posAlumnoVotado = random.nextInt(nAlumnos);
@@ -102,9 +102,9 @@ public class Simulador {
     }
 
     public void mostrarVotos(List<Voto> votos) {
-        for (Voto voto: votos) {
+        for (Voto voto : votos) {
             System.out.print(voto.getAlumno().getNombre() + " tiene " + voto.getAlumno().getVotos() + " votos y voto a ");
-            for (Alumno a: voto.getAlumnoList()) {
+            for (Alumno a : voto.getAlumnoList()) {
                 System.out.print(a.getNombre() + ", ");
             }
             System.out.println();
@@ -114,7 +114,7 @@ public class Simulador {
 
     public Integer recuentoVotos(List<Alumno> alumnos) {
         Integer recuento = 0;
-        for (Alumno a: alumnos) {
+        for (Alumno a : alumnos) {
             recuento += a.getVotos();
         }
         return recuento;
@@ -138,11 +138,10 @@ public class Simulador {
     }
 
     public void mostrarFacilitadores(List<Alumno> facilitadores) {
-        for (Alumno a: facilitadores) {
-            if(facilitadores.indexOf(a) < 5) {
+        for (Alumno a : facilitadores) {
+            if (facilitadores.indexOf(a) < 5) {
                 System.out.println(a.getNombre() + " es facilitador/a");
-            }
-            else {
+            } else {
                 System.out.println(a.getNombre() + " es facilitador/a suplente");
             }
         }

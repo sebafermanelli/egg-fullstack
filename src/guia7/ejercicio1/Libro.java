@@ -1,7 +1,7 @@
 package guia7.ejercicio1;
 
 public class Libro {
-    
+
     private int isbn;
     private String titulo;
     private String autor;
@@ -24,39 +24,39 @@ public class Libro {
         this.paginas = paginas;
     }
 
-    public void setISBN(int isbn) {
-        this.isbn = isbn;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
-    public void setPaginas(int paginas) {
-        this.paginas = paginas;
-    }
-
     public int getISBN() {
         return this.isbn;
+    }
+
+    public void setISBN(int isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitulo() {
         return this.titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getAutor() {
         return this.autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public int getPaginas() {
         return this.paginas;
     }
 
+    public void setPaginas(int paginas) {
+        this.paginas = paginas;
+    }
+
     public String toString() {
-        return "Libro{isbn=" + this.isbn + ", titulo=" + this.titulo + ", autor=" + this.autor +  ", cantPaginas=" + this.paginas + "}";
+        return "Libro{isbn=" + this.isbn + ", titulo=" + this.titulo + ", autor=" + this.autor + ", cantPaginas=" + this.paginas + "}";
     }
 }

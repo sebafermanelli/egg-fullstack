@@ -41,22 +41,21 @@ public class AlumnoService {
         Alumno getAlumno = null;
         Integer notaTotal = 0;
         double promedio = 0;
-        
-        for (Alumno a: alumnoList) {
-           if (a.getNombre().equals(nombre)) {
+
+        for (Alumno a : alumnoList) {
+            if (a.getNombre().equals(nombre)) {
                 getAlumno = a;
-               for (Integer n: a.getNotas()) {
-                   notaTotal += n;
-               }
-           }
+                for (Integer n : a.getNotas()) {
+                    notaTotal += n;
+                }
+            }
         }
-        
-        promedio = (double)(notaTotal / 3);
+
+        promedio = (double) (notaTotal / 3);
 
         if (getAlumno != null) {
             System.out.println("La nota promedio final de " + getAlumno.getNombre() + " es: " + promedio);
-        }
-        else {
+        } else {
             System.out.println("El alumno ingresado no existe");
         }
 

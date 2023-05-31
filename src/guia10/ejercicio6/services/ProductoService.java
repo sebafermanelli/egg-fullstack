@@ -31,8 +31,7 @@ public class ProductoService {
         if (productoList.containsKey(producto)) {
             productoList.remove(producto);
             System.out.println("Eliminando producto...");
-        }
-        else {
+        } else {
             System.out.println("El producto no existe");
         }
     }
@@ -47,15 +46,14 @@ public class ProductoService {
             productoList.replace(producto, precio);
             System.out.println("Cambiando el precio del producto...");
             scanner.nextLine();
-        }
-        else {
+        } else {
             System.out.println("El producto no existe");
         }
     }
 
     public static void showList(HashMap<String, Double> productoList) {
         System.out.println("Lista de productos: ");
-        for(Map.Entry<String, Double> entry : productoList.entrySet()) {
+        for (Map.Entry<String, Double> entry : productoList.entrySet()) {
             System.out.println(entry.getKey() + " - $" + entry.getValue());
         }
     }

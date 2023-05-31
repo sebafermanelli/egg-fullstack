@@ -24,7 +24,7 @@ public class MascotaService {
     }
 
     public static void MostrarListaMascotas() {
-        for (String i: mascotas) {
+        for (String i : mascotas) {
             System.out.println(i);
         }
     }

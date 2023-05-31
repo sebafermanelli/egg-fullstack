@@ -18,7 +18,7 @@ public class ArrayService {
         Arrays.sort(array);
 
         double[] aux = new double[array.length];
-        int j = aux.length-1;
+        int j = aux.length - 1;
         for (int i = 0; i < array.length; i++) {
             aux[i] = array[j];
             j--;
@@ -30,8 +30,7 @@ public class ArrayService {
         if (arrayB.length <= arrayA.length) {
             arrayB = Arrays.copyOf(arrayA, arrayB.length);
             Arrays.fill(arrayB, 10, arrayB.length, 0.5);
-        }
-        else {
+        } else {
             System.out.println("Error");
         }
 

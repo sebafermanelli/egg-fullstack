@@ -22,13 +22,13 @@ public class ParDeNumerosService {
     }
 
     public static double calcularPotencia(ParDeNumeros n) {
-        int mayor = (int)(devolverMayor(n));
-        int menor = (int)(devolverMenor(n));
+        int mayor = (int) (devolverMayor(n));
+        int menor = (int) (devolverMenor(n));
         return Math.pow(mayor, menor);
     }
 
     public static double calcularRaiz(ParDeNumeros n) {
-        int menor = (int)devolverMenor(n);
+        int menor = (int) devolverMenor(n);
         menor = Math.abs(menor);
         return Math.sqrt(menor);
     }

@@ -15,7 +15,7 @@ public class PersonaServices {
         int edad = scanner.nextInt();
         System.out.print("Ingrese el sexo de la persona (H-M-O): ");
         char sexo = scanner.next().toUpperCase().charAt(0);
-        while(sexo != 'H' && sexo != 'M' && sexo != 'O') {
+        while (sexo != 'H' && sexo != 'M' && sexo != 'O') {
             System.out.print("Ingrese un caracter valido para sexo (H-M-O): ");
             sexo = scanner.next().toUpperCase().charAt(0);
         }
@@ -32,14 +32,13 @@ public class PersonaServices {
     }
 
     public static int calcularIMC(Persona p) {
-        double pesoIdeal = (p.getPeso())/(Math.pow(p.getAltura(), 2));
+        double pesoIdeal = (p.getPeso()) / (Math.pow(p.getAltura(), 2));
         if (pesoIdeal < 20) {
             return -1;
         }
         if (pesoIdeal >= 20 && pesoIdeal <= 25) {
             return 0;
-        }
-        else {
+        } else {
             return 1;
         }
     }

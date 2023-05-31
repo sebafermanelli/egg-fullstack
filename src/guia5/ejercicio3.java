@@ -3,7 +3,7 @@ package guia5;
 import java.util.Scanner;
 
 public class ejercicio3 {
-    
+
     public static void main(String[] args) {
         int n, cont1, cont2, cont3, cont4, cont5, aux_digito, aux_num;
 
@@ -13,7 +13,7 @@ public class ejercicio3 {
         int[] numeros = new int[n];
 
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println("Ingrese el numero de la posicion " + (i+1) + " (1-99999):");
+            System.out.println("Ingrese el numero de la posicion " + (i + 1) + " (1-99999):");
             do {
                 numeros[i] = leer.nextInt();
             } while (numeros[i] < 1 || numeros[i] > 99999);

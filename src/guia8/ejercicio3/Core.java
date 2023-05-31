@@ -22,11 +22,11 @@ public class Core {
 
         mostrarPersonas(personaList);
 
-        System.out.println("Un " + ((mayores*100)/(personaList.length)) + "% son mayores");
-        System.out.println("Un " + ((menores*100)/(personaList.length)) + "% son menores");
-        System.out.println("Un " + ((debajo*100)/(personaList.length)) + "% esta por debajo del peso ideal");
-        System.out.println("Un " + ((ideal*100)/(personaList.length)) + "% esta en el peso ideal");
-        System.out.println("Un " + ((sobrepeso*100)/(personaList.length)) + "% tiene sobrepeso");
+        System.out.println("Un " + ((mayores * 100) / (personaList.length)) + "% son mayores");
+        System.out.println("Un " + ((menores * 100) / (personaList.length)) + "% son menores");
+        System.out.println("Un " + ((debajo * 100) / (personaList.length)) + "% esta por debajo del peso ideal");
+        System.out.println("Un " + ((ideal * 100) / (personaList.length)) + "% esta en el peso ideal");
+        System.out.println("Un " + ((sobrepeso * 100) / (personaList.length)) + "% tiene sobrepeso");
     }
 
     public static void clearScreen() {

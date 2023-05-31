@@ -3,7 +3,7 @@ package guia3;
 import java.util.Scanner;
 
 public class ejercicio6 {
-    
+
     public static void main(String[] args) {
         int num1, num2, opcion, resultado;
         char rta;
@@ -53,8 +53,7 @@ public class ejercicio6 {
 
                     if (rta == 'S') {
                         System.out.println("Saliendo...");
-                    }
-                    else {
+                    } else {
                         opcion = 0;
                     }
                     break;

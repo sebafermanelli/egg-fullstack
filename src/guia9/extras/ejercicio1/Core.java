@@ -1,7 +1,5 @@
 package guia9.extras.ejercicio1;
 
-import com.sun.security.jgss.GSSUtil;
-
 import java.util.Scanner;
 
 public class Core {
@@ -16,7 +14,7 @@ public class Core {
         String mesIngresado = scanner.nextLine().toLowerCase();
 
         while (!mesIngresado.equals(mesSecreto)) {
-            System.out.println("Incorrecto! Te doy una pista: comienza con " +  mesSecreto.charAt(0));
+            System.out.println("Incorrecto! Te doy una pista: comienza con " + mesSecreto.charAt(0));
             System.out.print("Introduzca el nombre del mes nuevamente: ");
             mesIngresado = scanner.nextLine();
         }

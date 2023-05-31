@@ -3,7 +3,7 @@ package guia4;
 import java.util.Scanner;
 
 public class ejercicio4 {
-    
+
     public static void main(String[] args) {
         int numero;
 
@@ -13,13 +13,12 @@ public class ejercicio4 {
 
         if (EsPrimo(numero)) {
             System.out.println("El numero " + numero + " es primo");
-        }
-        else {
+        } else {
             System.out.println("El numero " + numero + " no es primo");
         }
     }
 
-    public static boolean EsPrimo(int  num) {
+    public static boolean EsPrimo(int num) {
         int cont;
 
         cont = 0;
@@ -31,8 +30,7 @@ public class ejercicio4 {
 
         if (cont == 2) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

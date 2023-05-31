@@ -5,9 +5,7 @@ import guia11.extras.ejercicio1.model.Persona;
 import guia11.extras.ejercicio1.services.PerroService;
 import guia11.extras.ejercicio1.services.PersonaService;
 
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Core {
@@ -50,20 +48,19 @@ public class Core {
 
             System.out.println(persona.getNombre() + " adopto a " + perro.getNombre());
 
-            if(pp.cantidadPerros() != 0) {
+            if (pp.cantidadPerros() != 0) {
                 do {
                     System.out.print("Desea registrar otra adopcion? S/N: ");
                     rta = Core.scanner.next().toUpperCase().charAt(0);
                     Core.scanner.nextLine();
-                } while(rta != 'S' && rta != 'N');
-            }
-            else {
+                } while (rta != 'S' && rta != 'N');
+            } else {
                 rta = 'N';
             }
         } while (rta == 'S');
 
         System.out.println("Lista de personas con sus mascotas:");
-        for(Persona entry : adopcionesList) {
+        for (Persona entry : adopcionesList) {
             System.out.println("DNI: " + entry.getDocumento() + " - Nombre: " + entry.getNombre() + " - Nombre de mascota:" + entry.getPerro().getNombre());
         }
     }

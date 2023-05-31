@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio6 {
-    
+
     public static void main(String[] args) {
         int n, bajos;
         float alturaPromedio, alturaPromedio160, alturaTotal, alturaTotal160, altura;

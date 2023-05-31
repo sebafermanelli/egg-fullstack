@@ -3,7 +3,7 @@ package guia3;
 import java.util.Scanner;
 
 public class ejercicio8 {
-    
+
     public static void main(String[] args) {
         int lado;
 
@@ -13,10 +13,9 @@ public class ejercicio8 {
 
         for (int i = 0; i < lado; i++) {
             for (int j = 0; j < lado; j++) {
-                if ((j != 0 && j != lado-1) && (i != 0 && i != lado-1)) {
+                if ((j != 0 && j != lado - 1) && (i != 0 && i != lado - 1)) {
                     System.out.print("  ");
-                }
-                else {
+                } else {
                     System.out.print("* ");
                 }
             }

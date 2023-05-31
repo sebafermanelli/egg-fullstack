@@ -3,7 +3,6 @@ package guia11.ejercicio1.services;
 import guia11.ejercicio1.Core;
 import guia11.ejercicio1.model.Persona;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -28,7 +27,7 @@ public class PersonaService {
 
             System.out.print("Ingrese el DNI de la persona: ");
             persona.setDocumento(Core.scanner.nextInt());
-            while(personaList.containsKey(persona.getDocumento())) {
+            while (personaList.containsKey(persona.getDocumento())) {
                 System.out.println("Ya existe una persona con ese DNI");
                 System.out.print("Ingrese el DNI de la persona: ");
                 persona.setDocumento(Core.scanner.nextInt());
@@ -41,7 +40,7 @@ public class PersonaService {
             do {
                 System.out.print("Desea ingresar otra persona? S/N: ");
                 rta = Core.scanner.next().toUpperCase().charAt(0);
-            } while(rta != 'S' && rta != 'N');
+            } while (rta != 'S' && rta != 'N');
 
             Core.scanner.nextLine();
         } while (rta == 'S');
@@ -49,7 +48,7 @@ public class PersonaService {
 
     public void mostrarPersonas() {
         System.out.println("Lista de personas:");
-        for(Map.Entry<Integer, Persona> entry : personaList.entrySet()) {
+        for (Map.Entry<Integer, Persona> entry : personaList.entrySet()) {
             System.out.println("DNI: " + entry.getValue().getDocumento() + " - Nombre: " + entry.getValue().getNombre());
         }
     }
@@ -60,7 +59,7 @@ public class PersonaService {
 
         Core.scanner.nextLine();
 
-        for(Map.Entry<Integer, Persona> entry : personaList.entrySet()) {
+        for (Map.Entry<Integer, Persona> entry : personaList.entrySet()) {
             if (auxDocumento.equals(entry.getKey())) {
                 return entry.getValue();
             }

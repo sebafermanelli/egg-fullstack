@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio5 {
-    
+
     public static void main(String[] args) {
         char clase;
         int costo;
@@ -22,14 +22,12 @@ public class ejercicio5 {
 
         if (clase == 'A') {
             costoFinal = costo * 0.50;
-        }
-        else if (clase == 'B') {
+        } else if (clase == 'B') {
             costoFinal = costo * 0.65;
-        }
-        else if (clase == 'C') {
+        } else if (clase == 'C') {
             costoFinal = costo;
         }
 
-        System.out.println("El tratamiento cuesta $" +  costo + " pero como el socio es de clase " + clase + ", el valor final es: $" + costoFinal);
+        System.out.println("El tratamiento cuesta $" + costo + " pero como el socio es de clase " + clase + ", el valor final es: $" + costoFinal);
     }
 }

@@ -4,7 +4,8 @@ public class Cafetera {
 
     int capacidadMaxima, cantidadActual;
 
-    public Cafetera() {}
+    public Cafetera() {
+    }
 
     public Cafetera(int capacidadMaxima, int cantidadActual) {
         this.capacidadMaxima = capacidadMaxima;
@@ -14,6 +15,7 @@ public class Cafetera {
     public int getCapacidadMaxima() {
         return capacidadMaxima;
     }
+
     public void setCapacidadMaxima(int capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
     }
@@ -21,6 +23,7 @@ public class Cafetera {
     public int getCantidadActual() {
         return cantidadActual;
     }
+
     public void setCantidadActual(int cantidadActual) {
         this.cantidadActual = cantidadActual;
     }

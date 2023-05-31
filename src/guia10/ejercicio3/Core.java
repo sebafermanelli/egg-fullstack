@@ -1,6 +1,5 @@
 package guia10.ejercicio3;
 
-import guia10.ejercicio3.model.Alumno;
 import guia10.ejercicio3.services.AlumnoService;
 
 import java.util.Scanner;

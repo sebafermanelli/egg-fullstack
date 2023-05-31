@@ -11,7 +11,7 @@ public class Core {
 
         Simulador s = new Simulador();
         List<Alumno> alumnos = s.generarAlumnos();
-        List<Voto> votos =  s.votacion(alumnos);
+        List<Voto> votos = s.votacion(alumnos);
 
         s.mostrarAlumnos(alumnos);
         System.out.println();
@@ -19,7 +19,7 @@ public class Core {
         s.mostrarVotos(votos);
         System.out.println();
 
-        System.out.println(s.recuentoVotos(alumnos) + " votos efectivos de " + alumnos.size()*3 + " votos totales");
+        System.out.println(s.recuentoVotos(alumnos) + " votos efectivos de " + alumnos.size() * 3 + " votos totales");
         System.out.println();
 
         List<Alumno> facilitadores = s.getFacilitadores(alumnos);

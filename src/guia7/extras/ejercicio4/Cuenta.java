@@ -13,20 +13,20 @@ public class Cuenta {
         this.titular = titular;
     }
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
     public int getSaldo() {
         return saldo;
     }
 
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
     public String getTitular() {
         return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
     }
 
     public void retirar_dinero(int retiro) {
@@ -35,8 +35,7 @@ public class Cuenta {
             System.out.println("Se ha realizado un retiro de la cuenta de " + this.titular);
             System.out.println("Monto retiro: $" + retiro);
             System.out.println("Saldo actual disponible: $" + this.saldo);
-        }
-        else {
+        } else {
             System.out.println("El monto que desea retirar no esta disponible en la cuenta de " + this.titular);
             System.out.println("Saldo actual disponible: $" + this.saldo);
         }

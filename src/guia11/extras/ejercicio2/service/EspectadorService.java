@@ -22,13 +22,12 @@ public class EspectadorService {
 
             espectadores.add(espectador);
 
-            if(48 > espectadores.size()) {
+            if (48 > espectadores.size()) {
                 do {
                     System.out.print("Desea ingresar otro espectador? S/N: ");
                     rta = Core.scanner.next().toUpperCase().charAt(0);
-                } while(rta != 'S' && rta != 'N');
-            }
-            else {
+                } while (rta != 'S' && rta != 'N');
+            } else {
                 rta = 'N';
             }
         } while (rta == 'S');

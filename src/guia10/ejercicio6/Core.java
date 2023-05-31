@@ -1,6 +1,5 @@
 package guia10.ejercicio6;
 
-import guia10.ejercicio6.model.Producto;
 import guia10.ejercicio6.services.ProductoService;
 
 import java.util.HashMap;

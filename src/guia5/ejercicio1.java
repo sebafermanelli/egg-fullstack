@@ -11,7 +11,7 @@ public class ejercicio1 {
             numeros[i] = aux;
         }
 
-        for (int i = (numeros.length-1); 0 <= i; i--) {
+        for (int i = (numeros.length - 1); 0 <= i; i--) {
             System.out.println(numeros[i]);
         }
     }

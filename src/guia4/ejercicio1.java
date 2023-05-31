@@ -3,7 +3,7 @@ package guia4;
 import java.util.Scanner;
 
 public class ejercicio1 {
-    
+
     public static void main(String[] args) {
         int num1, num2, opcion;
         char rta;
@@ -82,7 +82,7 @@ public class ejercicio1 {
         return n1 / n2;
     }
 
-    public static void clearScreen() {  
+    public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }

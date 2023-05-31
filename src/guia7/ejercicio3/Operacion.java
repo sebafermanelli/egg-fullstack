@@ -3,7 +3,7 @@ package guia7.ejercicio3;
 import java.util.Scanner;
 
 public class Operacion {
-    
+
     private int num1, num2;
 
     public Operacion() {
@@ -18,12 +18,12 @@ public class Operacion {
         return this.num1;
     }
 
-    public int getNumero2() {
-        return this.num2;
-    }
-
     public void setNumero1(int num1) {
         this.num1 = num1;
+    }
+
+    public int getNumero2() {
+        return this.num2;
     }
 
     public void setNumero2(int num2) {
@@ -47,9 +47,8 @@ public class Operacion {
 
     public double dividir() {
         if (num2 != 0) {
-            return (double)(num1/num2);
-        }
-        else {
+            return (double) (num1 / num2);
+        } else {
             System.out.println("Error. Cero detectado en la division");
             return 0;
         }

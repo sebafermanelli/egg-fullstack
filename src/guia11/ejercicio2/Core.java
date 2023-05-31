@@ -14,7 +14,7 @@ public class Core {
         juego.crearJuego();
 
         boolean siguiente = juego.ronda();
-        while(!siguiente) {
+        while (!siguiente) {
             siguiente = juego.ronda();
         }
     }

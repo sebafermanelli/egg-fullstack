@@ -3,7 +3,7 @@ package guia3;
 import java.util.Scanner;
 
 public class ejercicio4 {
-    
+
     public static void main(String[] args) {
         String frase, primerLetra;
 
@@ -14,10 +14,9 @@ public class ejercicio4 {
         primerLetra = frase.substring(0, 1);
         primerLetra = primerLetra.toUpperCase();
 
-        if ( primerLetra.equals("A") ) {
+        if (primerLetra.equals("A")) {
             System.out.println("Correcto");
-        }
-        else {
+        } else {
             System.out.println("Incorrecto");
         }
     }

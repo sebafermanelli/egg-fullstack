@@ -9,6 +9,18 @@ import java.util.*;
 
 public class CineService {
 
+    public static <K, V> K getRandomKey(Map<K, V> sala) {
+        // Obtener la lista de claves
+        List<K> keys = new ArrayList<>(sala.keySet());
+
+        // Generar un número aleatorio
+        Random random = new Random();
+        int randomIndex = random.nextInt(keys.size());
+
+        // Obtener la clave aleatoria
+        return keys.get(randomIndex);
+    }
+
     public Cine crearCine() {
         Cine cine = new Cine();
 
@@ -28,9 +40,9 @@ public class CineService {
     }
 
     public void crearSala(Cine cine) {
-        for (int i = 8; i >=1 ; i--) {
+        for (int i = 8; i >= 1; i--) {
             for (int j = 65; j <= 70; j++) {
-                char letra = (char)j;
+                char letra = (char) j;
                 String asiento = String.valueOf(i) + letra;
                 cine.getSala().put(asiento, true);
             }
@@ -44,11 +56,10 @@ public class CineService {
                 asientoAleatorio = getRandomKey(cine.getSala());
             }
             Espectador e = espectadores.getFirst();
-            if((e.getDinero() >= cine.getValorEntrada()) && (e.getEdad() >= cine.getPelicula().getEdadMinima())) {
+            if ((e.getDinero() >= cine.getValorEntrada()) && (e.getEdad() >= cine.getPelicula().getEdadMinima())) {
                 espectadores.removeFirst();
                 cine.getSala().replace(asientoAleatorio, false);
-            }
-            else {
+            } else {
                 espectadores.removeFirst();
                 System.out.println(e.getNombre() + " es un sinverguenza");
             }
@@ -57,30 +68,17 @@ public class CineService {
 
     public void mostrarSala(Cine cine) {
         System.out.println(cine.getNombre() + " SALA: ");
-        for (int i = 8; i >=1 ; i--) {
+        for (int i = 8; i >= 1; i--) {
             for (int j = 65; j <= 70; j++) {
-                char letra = (char)j;
+                char letra = (char) j;
                 String asiento = String.valueOf(i) + letra;
-                if(cine.getSala().get(asiento)) {
+                if (cine.getSala().get(asiento)) {
                     System.out.print(asiento + " |");
-                }
-                else {
+                } else {
                     System.out.print(asiento + "X|");
                 }
             }
             System.out.println();
         }
-    }
-
-    public static <K, V> K getRandomKey(Map<K, V> sala) {
-        // Obtener la lista de claves
-        List<K> keys = new ArrayList<>(sala.keySet());
-
-        // Generar un número aleatorio
-        Random random = new Random();
-        int randomIndex = random.nextInt(keys.size());
-
-        // Obtener la clave aleatoria
-        return keys.get(randomIndex);
     }
 }

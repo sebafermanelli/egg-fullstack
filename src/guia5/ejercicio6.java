@@ -3,7 +3,7 @@ package guia5;
 import java.util.Scanner;
 
 public class ejercicio6 {
-    
+
     public static void main(String[] args) {
         int[][] matriz = new int[3][3];
         int[] fila = new int[3];
@@ -17,7 +17,7 @@ public class ejercicio6 {
                 System.out.println("Ingrese el numero de la fila: " + i + " columna: " + j + ":");
                 do {
                     matriz[i][j] = leer.nextInt();
-                } while(matriz[i][j] < 1 || matriz[i][j] > 9);
+                } while (matriz[i][j] < 1 || matriz[i][j] > 9);
             }
             System.out.println();
         }
@@ -28,8 +28,7 @@ public class ejercicio6 {
             for (int j = 0; j < matriz.length; j++) {
                 if (matriz[i][j] < 0) {
                     System.out.print(matriz[i][j] + " ");
-                }
-                else {
+                } else {
                     System.out.print(matriz[i][j] + "  ");
                 }
             }
@@ -62,8 +61,7 @@ public class ejercicio6 {
         System.out.println();
         if (magic) {
             System.out.println("La matriz es magica");
-        }
-        else {
+        } else {
             System.out.println("La matriz no es magica");
         }
     }

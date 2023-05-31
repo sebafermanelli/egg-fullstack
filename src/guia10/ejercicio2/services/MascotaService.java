@@ -24,14 +24,14 @@ public class MascotaService {
     }
 
     public static void MostrarListaMascotas() {
-        for (String i: mascotas) {
+        for (String i : mascotas) {
             System.out.println(i);
         }
     }
 
     public static String obtenerMascotaNombre(String nombre) {
         String getOne = "No existe esa mascota";
-        for (String i: mascotas) {
+        for (String i : mascotas) {
             if (i.startsWith(nombre)) {
                 getOne = i;
                 return getOne;

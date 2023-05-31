@@ -3,7 +3,7 @@ package guia7.extras.ejercicio4;
 import java.util.Scanner;
 
 public class Core {
-    
+
     public static void main(String[] args) {
         String nombre, rta;
         boolean continuar = true;
@@ -20,7 +20,7 @@ public class Core {
         cliente.setTitular(nombre);
         cliente.setSaldo(saldo);
 
-        while(continuar == true) {
+        while (continuar == true) {
             System.out.println("Ingrese el monto a retirar de la cuenta de " + cliente.getTitular());
             retiro = leer.nextInt();
 
@@ -30,7 +30,7 @@ public class Core {
             do {
                 rta = leer.nextLine().toUpperCase();
             } while (!rta.equals("S") && !rta.equals("N"));
-            if(rta.equals("N")) {
+            if (rta.equals("N")) {
                 continuar = false;
             }
         }

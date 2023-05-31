@@ -44,8 +44,7 @@ public class Jugador {
     public boolean disparo(Revolver r) {
         if (!r.disparar()) {
             r.siguieteDisparo();
-        }
-        else {
+        } else {
             setMuerto(true);
         }
 

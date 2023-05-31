@@ -3,7 +3,7 @@ package guia5.extras;
 import java.util.Scanner;
 
 public class ejercicio5 {
-    
+
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class ejercicio5 {
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-                matriz[i][j] = (int)(Math.random() * 10);
+                matriz[i][j] = (int) (Math.random() * 10);
                 suma += matriz[i][j];
             }
         }

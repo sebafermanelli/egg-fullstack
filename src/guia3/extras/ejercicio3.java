@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio3 {
-    
+
     public static void main(String[] args) {
         String letra;
 
@@ -19,8 +19,7 @@ public class ejercicio3 {
 
         if (letra.equals("A") || letra.equals("E") || letra.equals("I") || letra.equals("O") || letra.equals("U")) {
             System.out.println("Es vocal");
-        }
-        else {
+        } else {
             System.out.println("No es vocal");
         }
     }

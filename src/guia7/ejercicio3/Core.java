@@ -1,7 +1,7 @@
 package guia7.ejercicio3;
 
 public class Core {
-    
+
     public static void main(String[] args) {
         Operacion operacion1 = new Operacion();
 

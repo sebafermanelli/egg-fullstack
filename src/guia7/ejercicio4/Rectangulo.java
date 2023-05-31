@@ -3,9 +3,9 @@ package guia7.ejercicio4;
 import java.util.Scanner;
 
 public class Rectangulo {
-    
+
     private int base, altura;
-    
+
     Rectangulo() {
     }
 
@@ -14,20 +14,20 @@ public class Rectangulo {
         this.altura = altura;
     }
 
-    public void setBase(int base) {
-        this.base = base;
-    }
-
-    public void setAltura(int altura) {
-        this.altura = altura;
-    }
-
     public int getBase() {
         return this.base;
     }
 
+    public void setBase(int base) {
+        this.base = base;
+    }
+
     public int getAltura() {
         return this.altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
     }
 
     public void crearRectangulo() {

@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio2 {
-    
+
     public static void main(String[] args) {
         int a, b, c, d, aux;
 

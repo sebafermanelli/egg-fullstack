@@ -12,16 +12,15 @@ public class ejercicio3 {
 
     public static void GenerarVector(int[] enterosAleatorios) {
         for (int i = 0; i < enterosAleatorios.length; i++) {
-            enterosAleatorios[i] = (int)(Math.random() * 10);
+            enterosAleatorios[i] = (int) (Math.random() * 10);
         }
     }
 
     public static void MostrarVector(int[] enterosAleatorios) {
         for (int i = 0; i < enterosAleatorios.length; i++) {
-            if (i == (enterosAleatorios.length-1)) {
+            if (i == (enterosAleatorios.length - 1)) {
                 System.out.print(enterosAleatorios[i]);
-            }
-            else {
+            } else {
                 System.out.print(enterosAleatorios[i] + " - ");
             }
         }

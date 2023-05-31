@@ -9,7 +9,7 @@ public class ejercicio4 {
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-                matriz[i][j] = (int)(Math.random() * 10);
+                matriz[i][j] = (int) (Math.random() * 10);
                 System.out.print(matriz[i][j] + " ");
             }
             System.out.println();

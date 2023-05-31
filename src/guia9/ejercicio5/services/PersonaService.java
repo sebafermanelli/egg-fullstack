@@ -28,13 +28,13 @@ public class PersonaService {
         System.out.print("Ingrese el año de su nacimiento: ");
         int a = leer.nextInt();
 
-        Date nac = new Date(a-1900,m-1,d);
+        Date nac = new Date(a - 1900, m - 1, d);
         return new Persona(nombre, nac);
     }
 
     public int calcularEdad(Persona p) {
         Date actual = new Date();
-        return (int)((actual.getTime() - p.getNacimiento().getTime()) / 31556900000L);
+        return (int) ((actual.getTime() - p.getNacimiento().getTime()) / 31556900000L);
     }
 
     public boolean menorQue(Persona p, int edad) {

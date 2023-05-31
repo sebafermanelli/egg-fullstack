@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio14 {
-    
+
     public static void main(String[] args) {
         int totalEdad, edad, cantFamilias, cantHijos, cantTotalHijos;
         float promedioEdad;

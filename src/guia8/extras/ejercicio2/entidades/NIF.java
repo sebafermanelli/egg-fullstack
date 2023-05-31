@@ -4,7 +4,8 @@ public class NIF {
     long dni;
     char letra;
 
-    public NIF() {}
+    public NIF() {
+    }
 
     public NIF(long dni, char letra) {
         this.dni = dni;
@@ -14,6 +15,7 @@ public class NIF {
     public long getDni() {
         return dni;
     }
+
     public void setDni(int dni) {
         this.dni = dni;
     }
@@ -21,6 +23,7 @@ public class NIF {
     public char getLetra() {
         return letra;
     }
+
     public void setLetra(char letra) {
         this.letra = letra;
     }

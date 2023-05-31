@@ -3,7 +3,7 @@ package guia4;
 import java.util.Scanner;
 
 public class ejercicio2 {
-    
+
     public static void main(String[] args) {
         int n;
 
@@ -33,7 +33,7 @@ public class ejercicio2 {
         String seguir;
 
         for (int i = 0; i < name.length; i++) {
-            System.out.println("Ingrese el nombre de la persona " + (i+1) + ":");
+            System.out.println("Ingrese el nombre de la persona " + (i + 1) + ":");
             name[i] = leer.nextLine();
 
             System.out.println("Ingrese la edad de " + name[i] + ":");
@@ -41,12 +41,12 @@ public class ejercicio2 {
 
             leer.nextLine(); // Consumir el final de linea del int para que el nextLine() siguiente no de error
 
-            if (i != name.length-1) {
+            if (i != name.length - 1) {
                 System.out.println("Desea ingresar otra persona? (Si / No) ");
                 do {
                     seguir = leer.nextLine().toUpperCase();
-                } while(seguir.equals("SI") && seguir.equals("NO"));
-                
+                } while (seguir.equals("SI") && seguir.equals("NO"));
+
 
                 if (seguir.equals("NO")) {
                     break;
@@ -61,9 +61,8 @@ public class ejercicio2 {
                 break;
             }
             if (age[i] < 18) {
-            System.out.println(name[i] + " es menor, tiene " + age[i] + " años.");
-            }
-            else {
+                System.out.println(name[i] + " es menor, tiene " + age[i] + " años.");
+            } else {
                 System.out.println(name[i] + " es mayor, tiene " + age[i] + " años.");
             }
         }

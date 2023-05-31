@@ -35,8 +35,8 @@ public class Revolver {
 
     public void llenarRevolver() {
         Random aleatorio = new Random();
-        this.setPosActual(aleatorio.nextInt(1,7));
-        this.setPosBala(aleatorio.nextInt(1,7));
+        this.setPosActual(aleatorio.nextInt(1, 7));
+        this.setPosBala(aleatorio.nextInt(1, 7));
     }
 
     public boolean disparar() {
@@ -46,8 +46,7 @@ public class Revolver {
     public void siguieteDisparo() {
         if (this.getPosActual().equals(6)) {
             this.setPosActual(1);
-        }
-        else {
+        } else {
             this.setPosActual(this.getPosActual() + 1);
         }
     }

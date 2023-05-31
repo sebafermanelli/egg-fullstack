@@ -2,7 +2,9 @@ package guia11.ejercicio3.service;
 
 import guia11.ejercicio3.model.Carta;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class CartaService {
 
@@ -12,7 +14,7 @@ public class CartaService {
 
     public void crearBaraja() {
         for (int i = 1; i <= 12; i++) {
-            if(i == 8 || i == 9) {
+            if (i == 8 || i == 9) {
                 continue;
             }
 
@@ -44,8 +46,7 @@ public class CartaService {
 
         if (cant > baraja.size()) {
             System.out.println("La cantidad ingresada supera las cartas que se pueden repartir");
-        }
-        else {
+        } else {
             for (int i = 1; i <= cant; i++) {
                 Carta c = baraja.removeFirst();
                 cartasRepartidas.add(c);
@@ -54,10 +55,9 @@ public class CartaService {
     }
 
     public void mostrarCartasRepartidas() {
-        if(cartasRepartidas.isEmpty()) {
+        if (cartasRepartidas.isEmpty()) {
             System.out.println("No hay cartas repartidas");
-        }
-        else {
+        } else {
             System.out.println("Cartas repartidas (" + cartasRepartidas.size() + "):");
             for (Carta c : cartasRepartidas) {
                 System.out.println(c.getNum() + " - " + c.getPalo());

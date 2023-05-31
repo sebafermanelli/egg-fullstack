@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio9 {
-    
+
     public static void main(String[] args) {
         int num1, num2, cociente, residuo;
 
@@ -21,7 +21,7 @@ public class ejercicio9 {
         do {
             cociente++;
             residuo -= num2;
-        } while ( residuo >= num2 );
+        } while (residuo >= num2);
 
         System.out.println("El residuo es " + residuo + " y el cociente es " + cociente);
     }

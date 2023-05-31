@@ -1,7 +1,7 @@
 package guia7.extras.ejercicio2;
 
 public class Core {
-    
+
     public static void main(String[] args) {
         Puntos p = new Puntos();
 

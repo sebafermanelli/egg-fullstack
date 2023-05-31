@@ -3,7 +3,7 @@ package guia3.extras;
 import java.util.Scanner;
 
 public class ejercicio7 {
-    
+
     public static void main(String[] args) {
         int n, cont, num, max, min, total;
         float promedio;
@@ -22,12 +22,12 @@ public class ejercicio7 {
             System.out.println("Ingrese el numero " + cont + ":");
             num = leer.nextInt();
 
-            if ( num >= 0) {
-                if ( num < min || cont == 1 ) {
+            if (num >= 0) {
+                if (num < min || cont == 1) {
                     min = num;
                 }
 
-                if ( max < num ) {
+                if (max < num) {
                     max = num;
                 }
 
@@ -54,12 +54,12 @@ public class ejercicio7 {
             System.out.println("Ingrese el numero " + cont + ":");
             num = leer.nextInt();
 
-            if ( num >= 0) {
-                if ( num < min || cont == 1 ) {
+            if (num >= 0) {
+                if (num < min || cont == 1) {
                     min = num;
                 }
 
-                if ( max < num ) {
+                if (max < num) {
                     max = num;
                 }
 
