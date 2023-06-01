@@ -33,8 +33,10 @@ public class Simulador {
 
         for (int i = 0; i < nAlumnos; i++) {
             int dni = random.nextInt(20000000, 45000000);
+            //int dni = random.nextInt(45000000 - 20000000 + 1) + 20000000;
             while (dnis.contains(dni)) {
                 dni = random.nextInt(20000000, 45000000);
+                //dni = random.nextInt(45000000 - 20000000 + 1) + 20000000;
             }
 
             dnis.add(dni);

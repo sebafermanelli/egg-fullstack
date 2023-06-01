@@ -33,7 +33,7 @@ public class CineService {
         System.out.print("Ingrese el valor de la entrada al cine: ");
         cine.setValorEntrada(Core.scanner.nextDouble());
 
-        Pelicula peli = PeliculaService.crearPelicula();
+        Pelicula peli = PeliculaService.crearPelicula(cine);
         cine.setPelicula(peli);
 
         return cine;
@@ -51,31 +51,54 @@ public class CineService {
 
     public void asignarAsientos(Cine cine, LinkedList<Espectador> espectadores) {
         do {
-            String asientoAleatorio = getRandomKey(cine.getSala());
-            while (!cine.getSala().get(asientoAleatorio)) {
-                asientoAleatorio = getRandomKey(cine.getSala());
+            boolean disponibilidad = false;
+            for (Map.Entry<String, Boolean> asiento : cine.getSala().entrySet()) {
+                if (asiento.getValue()) {
+                    disponibilidad = true;
+                    break;
+                }
             }
-            Espectador e = espectadores.getFirst();
-            if ((e.getDinero() >= cine.getValorEntrada()) && (e.getEdad() >= cine.getPelicula().getEdadMinima())) {
+            if(disponibilidad) {
+                String asientoAleatorio = getRandomKey(cine.getSala());
+                while (!cine.getSala().get(asientoAleatorio)) {
+                    asientoAleatorio = getRandomKey(cine.getSala());
+                }
+                Espectador e = espectadores.getFirst();
+                if ((e.getDinero() >= cine.getValorEntrada()) && (e.getEdad() >= cine.getPelicula().getEdadMinima())) {
+                    espectadores.removeFirst();
+                    cine.getSala().replace(asientoAleatorio, false);
+                    System.out.println(e.getNombre() + " fue sentado en el asiento " + asientoAleatorio);
+                }
+                else {
+                    if ((e.getDinero() < cine.getValorEntrada()) && (e.getEdad() < cine.getPelicula().getEdadMinima())) {
+                        espectadores.removeFirst();
+                        System.out.println(e.getNombre() + " es menor y encima es raton");
+                    } else if (e.getDinero() < cine.getValorEntrada()) {
+                        espectadores.removeFirst();
+                        System.out.println(e.getNombre() + " es un raton");
+                    } else if (e.getEdad() < cine.getPelicula().getEdadMinima()) {
+                        espectadores.removeFirst();
+                        System.out.println(e.getNombre() + " es menor");
+                    }
+                }
+            }
+            else {
                 espectadores.removeFirst();
-                cine.getSala().replace(asientoAleatorio, false);
-            } else {
-                espectadores.removeFirst();
-                System.out.println(e.getNombre() + " es un sinverguenza");
+                System.out.println("No hay disponibilidad de asientos");
             }
         } while (!espectadores.isEmpty());
     }
 
     public void mostrarSala(Cine cine) {
-        System.out.println(cine.getNombre() + " SALA: ");
+        System.out.println(cine.getNombre() + " - PELICULA: " + cine.getPelicula().getTitulo());
         for (int i = 8; i >= 1; i--) {
             for (int j = 65; j <= 70; j++) {
                 char letra = (char) j;
                 String asiento = String.valueOf(i) + letra;
                 if (cine.getSala().get(asiento)) {
-                    System.out.print(asiento + " |");
+                    System.out.print(asiento + "  |");
                 } else {
-                    System.out.print(asiento + "X|");
+                    System.out.print(asiento + "X |");
                 }
             }
             System.out.println();

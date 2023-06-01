@@ -2,7 +2,7 @@ package guia11.extras.ejercicio2.model;
 
 public class Pelicula {
     String titulo;
-    Double duracion;
+    Integer duracion;
     Integer edadMinima;
     String director;
 
@@ -17,11 +17,11 @@ public class Pelicula {
         this.titulo = titulo;
     }
 
-    public Double getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(Double duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 
