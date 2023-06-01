@@ -58,7 +58,7 @@ public class CineService {
                     break;
                 }
             }
-            if(disponibilidad) {
+            if (disponibilidad) {
                 String asientoAleatorio = getRandomKey(cine.getSala());
                 while (!cine.getSala().get(asientoAleatorio)) {
                     asientoAleatorio = getRandomKey(cine.getSala());
@@ -68,8 +68,7 @@ public class CineService {
                     espectadores.removeFirst();
                     cine.getSala().replace(asientoAleatorio, false);
                     System.out.println(e.getNombre() + " fue sentado en el asiento " + asientoAleatorio);
-                }
-                else {
+                } else {
                     if ((e.getDinero() < cine.getValorEntrada()) && (e.getEdad() < cine.getPelicula().getEdadMinima())) {
                         espectadores.removeFirst();
                         System.out.println(e.getNombre() + " es menor y encima es raton");
@@ -81,8 +80,7 @@ public class CineService {
                         System.out.println(e.getNombre() + " es menor");
                     }
                 }
-            }
-            else {
+            } else {
                 espectadores.removeFirst();
                 System.out.println("No hay disponibilidad de asientos");
             }

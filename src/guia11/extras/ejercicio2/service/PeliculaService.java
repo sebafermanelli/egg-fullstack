@@ -2,7 +2,6 @@ package guia11.extras.ejercicio2.service;
 
 import guia11.extras.ejercicio2.Core;
 import guia11.extras.ejercicio2.model.Cine;
-import guia11.extras.ejercicio2.model.Espectador;
 import guia11.extras.ejercicio2.model.Pelicula;
 
 public class PeliculaService {
@@ -39,7 +38,7 @@ public class PeliculaService {
                 }
                 default -> System.out.println("Esa pelicula no esta disponible");
             }
-        } while(op < 1 || op > 3);
+        } while (op < 1 || op > 3);
 
         /*
         System.out.print("Ingrese el titulo de la pelicula: ");

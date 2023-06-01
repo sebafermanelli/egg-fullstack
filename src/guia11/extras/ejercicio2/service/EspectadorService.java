@@ -12,8 +12,8 @@ public class EspectadorService {
         Random random = new Random();
         for (int i = 0; i < 48; i++) {
             Espectador espectador = new Espectador();
-            espectador.setNombre("Espectador " + (i+1));
-            espectador.setEdad(random.nextInt(1,70));
+            espectador.setNombre("Espectador " + (i + 1));
+            espectador.setEdad(random.nextInt(1, 70));
             espectador.setDinero(random.nextDouble(1500));
 
             espectadores.add(espectador);
