@@ -14,3 +14,4 @@
   - Guia 9: "Clases de Utilidad".
   - Guia 10: "Colecciones".
   - Guia 11: "Relaciones entre Clases".
+  - Guia 12: "Herencia".
