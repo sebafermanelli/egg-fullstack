@@ -1,16 +1,16 @@
-package guia12.ejercicio2.model;
+package guia12.ejercicio2y3.model;
 
-import guia12.ejercicio2.Core;
+import guia12.ejercicio2y3.Core;
 
 public class Televisor extends Electrodomestico {
-    protected Integer pulgadas;
-    protected Boolean sintonizador;
+    private Integer pulgadas;
+    private Boolean sintonizador;
 
     public Televisor() {
     }
 
-    public Televisor(Double precio, String color, char consumo, Double peso, Integer pulgadas, Boolean sintonizador) {
-        super(precio, color, consumo, peso);
+    public Televisor(Double precio, String color, char consumoE, Double peso, Integer pulgadas, Boolean sintonizador) {
+        super(precio, color, consumoE, peso);
         this.pulgadas = pulgadas;
         this.sintonizador = sintonizador;
     }
@@ -31,26 +31,38 @@ public class Televisor extends Electrodomestico {
         this.sintonizador = sintonizador;
     }
 
+    @Override
+    public String toString() {
+        return "Televisor{" +
+                "pulgadas=" + pulgadas +
+                ", sintonizador=" + sintonizador +
+                ", precio=" + precio +
+                ", color='" + color + '\'' +
+                ", ce=" + consumoE +
+                ", peso=" + peso +
+                '}';
+    }
+
     public void crearTelevisor() {
         super.crearElectrodomestico();
         System.out.print("Ingrese las pulgadas del televisor: ");
-        this.setPulgadas(Core.scanner.nextInt());
+        pulgadas = Core.scanner.nextInt();
         System.out.print("Ingrese si el televisor posee sintonizador (S/N): ");
         char rta = Core.scanner.next().toLowerCase().charAt(0);
         while (rta != 's' && rta != 'n') {
             System.out.print("Ingrese si el televisor posee sintonizador (S/N): ");
             rta = Core.scanner.next().toLowerCase().charAt(0);
         }
-        this.setSintonizador(rta == 's');
+        sintonizador = rta == 's';
     }
 
     public void precioFinal() {
         super.precioFinal();
-        if (this.pulgadas > 40) {
-            super.setPrecio(super.getPrecio() * 1.3);
+        if (pulgadas > 40) {
+            precio *= 1.3;
         }
-        if (this.sintonizador) {
-            super.setPrecio(super.getPrecio() + 500.0);
+        if (sintonizador) {
+            precio += 500;
         }
     }
 }
