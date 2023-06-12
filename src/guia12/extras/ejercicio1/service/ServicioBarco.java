@@ -14,7 +14,7 @@ public class ServicioBarco {
         Double eslora = scanner.nextDouble();
         System.out.print("Ingrese el año de fabricacion del barco (1950-2023): ");
         int anioFabricacion = scanner.nextInt();
-        while(anioFabricacion > 2023 || anioFabricacion < 1950) {
+        while (anioFabricacion > 2023 || anioFabricacion < 1950) {
             System.out.print("Ingrese un año de fabricacion del barco correcto (1950-2023): ");
             anioFabricacion = scanner.nextInt();
         }

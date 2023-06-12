@@ -14,11 +14,11 @@ public class ServicioAlquiler {
 
         System.out.print("Ingrese el tipo de barco (Yate, Velero, Lancha): ");
         String tipo = scanner.next();
-        while(!tipo.equalsIgnoreCase("Yate") && !tipo.equalsIgnoreCase("Velero") && !tipo.equalsIgnoreCase("Lancha")) {
+        while (!tipo.equalsIgnoreCase("Yate") && !tipo.equalsIgnoreCase("Velero") && !tipo.equalsIgnoreCase("Lancha")) {
             System.out.print("Ingrese un tipo de barco correcto (Yate, Velero, Lancha): ");
             tipo = scanner.next();
         }
-        if(tipo.equalsIgnoreCase("Yate")) {
+        if (tipo.equalsIgnoreCase("Yate")) {
             ServicioYate serviceYate = new ServicioYate();
             barco = serviceYate.crearYate();
         } else if (tipo.equalsIgnoreCase("Velero")) {
@@ -36,8 +36,8 @@ public class ServicioAlquiler {
         System.out.print("Ingrese el año que desea retirar el barco: ");
         int anio = scanner.nextInt();
         Date fechaActual = new Date();
-        Date fechaDevolucion = new Date(anio-1900,mes-1,dia);
-        while(fechaActual.getTime() > fechaDevolucion.getTime()) {
+        Date fechaDevolucion = new Date(anio - 1900, mes - 1, dia);
+        while (fechaActual.getTime() > fechaDevolucion.getTime()) {
             System.out.print("Ingrese el dia de devolucion del barco: ");
             dia = scanner.nextInt();
             System.out.print("Ingrese el mes de devolucion del barco: ");
@@ -45,7 +45,7 @@ public class ServicioAlquiler {
             System.out.print("Ingrese el año que desea retirar el barco: ");
             anio = scanner.nextInt();
             fechaActual = new Date();
-            fechaDevolucion = new Date(anio-1900,mes-1,dia);
+            fechaDevolucion = new Date(anio - 1900, mes - 1, dia);
         }
 
         return new Alquiler(cliente, new Date(), fechaDevolucion, 0, barco);
@@ -56,11 +56,11 @@ public class ServicioAlquiler {
         long tiempoAlquilerEnDias = TimeUnit.MILLISECONDS.toDays(tiempoAlquilerEnMilisegundos);
         double valorAlquiler = 0;
 
-        if(alquiler.getBarco() instanceof Yate) {
+        if (alquiler.getBarco() instanceof Yate) {
             valorAlquiler = (double) (tiempoAlquilerEnDias) * (alquiler.getBarco().calcularModulo());
-        } else if(alquiler.getBarco() instanceof Velero) {
+        } else if (alquiler.getBarco() instanceof Velero) {
             valorAlquiler = (double) (tiempoAlquilerEnDias) * (alquiler.getBarco().calcularModulo());
-        } else if(alquiler.getBarco() instanceof BarcoMotor) {
+        } else if (alquiler.getBarco() instanceof BarcoMotor) {
             valorAlquiler = (double) (tiempoAlquilerEnDias) * (alquiler.getBarco().calcularModulo());
         }
         return valorAlquiler;

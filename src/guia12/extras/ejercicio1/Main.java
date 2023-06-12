@@ -2,8 +2,8 @@ package guia12.extras.ejercicio1;
 
 import guia12.extras.ejercicio1.model.Alquiler;
 import guia12.extras.ejercicio1.model.Cliente;
-import guia12.extras.ejercicio1.service.ServicioCliente;
 import guia12.extras.ejercicio1.service.ServicioAlquiler;
+import guia12.extras.ejercicio1.service.ServicioCliente;
 
 public class Main {
     public static void main(String[] args) {
