@@ -55,6 +55,7 @@ public class ejercicio6 {
         for (int i = 0; i < fila.length; i++) {
             if (fila[i] != diagonal || columna[i] != diagonal) {
                 magic = false;
+                break;
             }
         }
 

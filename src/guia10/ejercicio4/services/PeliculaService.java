@@ -45,7 +45,7 @@ public class PeliculaService {
     public void mostrarPeliculasMayorA1hs() {
         for (Pelicula p : peliculasList) {
             if (p.getDuracion() > 1) {
-                System.out.println(p.toString());
+                System.out.println(p);
             }
         }
     }

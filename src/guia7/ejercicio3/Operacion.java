@@ -47,7 +47,7 @@ public class Operacion {
 
     public double dividir() {
         if (num2 != 0) {
-            return (double) (num1 / num2);
+            return num1 / num2;
         } else {
             System.out.println("Error. Cero detectado en la division");
             return 0;

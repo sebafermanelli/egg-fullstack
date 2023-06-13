@@ -48,6 +48,7 @@ public class ejercicio5 {
             for (int j = 0; j < matriz.length; j++) {
                 if (matriz[i][j] != -(matriz[j][i])) {
                     antisimetrica = false;
+                    break;
                 }
             }
         }

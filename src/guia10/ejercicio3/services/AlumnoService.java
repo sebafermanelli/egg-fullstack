@@ -51,7 +51,7 @@ public class AlumnoService {
             }
         }
 
-        promedio = (double) (notaTotal / 3);
+        promedio = notaTotal / 3;
 
         if (getAlumno != null) {
             System.out.println("La nota promedio final de " + getAlumno.getNombre() + " es: " + promedio);

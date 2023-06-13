@@ -28,10 +28,6 @@ public class ejercicio4 {
             }
         }
 
-        if (cont == 2) {
-            return true;
-        } else {
-            return false;
-        }
+        return cont == 2;
     }
 }

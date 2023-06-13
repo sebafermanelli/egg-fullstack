@@ -27,7 +27,7 @@ public class ejercicio2 {
             }
         }
 
-        if (encontro == false) {
+        if (!encontro) {
             System.out.println("No se encontro ninguna coincidencia");
         }
     }

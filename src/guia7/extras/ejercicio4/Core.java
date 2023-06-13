@@ -20,7 +20,7 @@ public class Core {
         cliente.setTitular(nombre);
         cliente.setSaldo(saldo);
 
-        while (continuar == true) {
+        while (continuar) {
             System.out.println("Ingrese el monto a retirar de la cuenta de " + cliente.getTitular());
             retiro = leer.nextInt();
 

@@ -21,6 +21,6 @@ public class Core {
         System.out.println("Ingrese la cantidad de paginas del Libro:");
         libro1.setPaginas(leer.nextInt());
 
-        System.out.println(libro1.toString());
+        System.out.println(libro1);
     }
 }

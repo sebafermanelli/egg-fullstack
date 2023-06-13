@@ -2,9 +2,9 @@ package guia12.ejercicio4.interfaces;
 
 public interface CalculosFormas {
 
-    public final double PI = Math.PI;
+    double PI = Math.PI;
 
-    public double calcularArea();
+    double calcularArea();
 
-    public double calcularPerimetro();
+    double calcularPerimetro();
 }

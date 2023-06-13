@@ -5,7 +5,7 @@ import guia11.ejercicio2.Core;
 import java.util.ArrayList;
 
 public class Juego {
-    private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+    private final ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private Revolver revolver;
 
     public Juego() {
