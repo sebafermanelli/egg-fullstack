@@ -1,17 +1,27 @@
-# Backend con Java
+# Programación Full stack
 
-## Ejercicios
-- Dentro de la carpeta [` src `](https://github.com/sebafermanelli/java-egg/tree/main/src) estan los ejercicios de Java realizados en el curso de "Programacion Full Stack" dictado por Egg Cooperation.
-- Organizados por guía:
-  - Guia 1: "Git con GitHub 1".
-  - Guia 2: "Introduccion a Java".
-  - Guia 3: "Estructuras de Control en Java".
-  - Guia 4: "Subprogramas en Java".
-  - Guia 5: "Arreglos en Java".
-  - Guia 6: "Git con GitHub 2".
-  - Guia 7: "POO".
-  - Guia 8: "Clase de Servicio".
-  - Guia 9: "Clases de Utilidad".
-  - Guia 10: "Colecciones".
-  - Guia 11: "Relaciones entre Clases".
-  - Guia 12: "Herencia".
+## AP - Temario
+
+1. Git con GitHub 
+2. Introducción a Java 
+3. Estructuras de control en Java 
+4. Subprogramas en Java 
+5. Arreglos en Java 
+6. Git con GitHub 2 
+7. Programación Orientada a Objetos 
+8. Clases de Servicio 
+9. Clases de Utilidad 
+10. Colecciones 
+11. Relaciones entre Clases 
+12. Herencia 
+13. Excepciones 
+14. MySQL 
+15. JDBC 
+16. JPA 
+17. Integrador 
+18. HTML & CSS 
+19. Spring MVC 
+20. Buenas prácticas de Java 
+21. Spring Register & Login 
+22. JavaScript 
+23. React
