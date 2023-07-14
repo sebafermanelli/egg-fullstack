@@ -1,6 +1,5 @@
 package dao;
 
-import entity.Autor;
 import entity.Libro;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -8,7 +7,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class LibroDAO {
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
 
     public LibroDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -41,24 +40,10 @@ public class LibroDAO {
         return query.getResultList();
     }
 
-    public List<Libro> obtenerLibroPorTitulo(String titulo) {
-        TypedQuery<Libro> query = entityManager.createQuery("SELECT l FROM Libro l WHERE l.titulo LIKE ?1",
+    public List<Libro> obtenerLibrosDisponibles() {
+        TypedQuery<Libro> query = entityManager.createQuery("SELECT l FROM Libro l WHERE l.alta = true AND NOT(l" +
+                        ".ejemplares_restantes=0)",
                 Libro.class);
-        query.setParameter(1, "%"+ titulo +"%");
-        return query.getResultList();
-    }
-
-    public List<Libro> obtenerLibroPorNombreAutor(String nombreAutor) {
-        TypedQuery<Libro> query = entityManager.createQuery("SELECT l FROM Libro l WHERE l.autor.nombre = ?1",
-                Libro.class);
-        query.setParameter(1, nombreAutor);
-        return query.getResultList();
-    }
-
-    public List<Libro> obtenerLibroPorNombreEditorial(String nombreEditorial) {
-        TypedQuery<Libro> query = entityManager.createQuery("SELECT l FROM Libro l WHERE l.editorial.nombre = ?1",
-                Libro.class);
-        query.setParameter(1, nombreEditorial);
         return query.getResultList();
     }
 }

@@ -1,6 +1,5 @@
 package dao;
 
-import entity.Autor;
 import entity.Editorial;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -8,7 +7,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class EditorialDAO {
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
 
     public EditorialDAO(EntityManager entityManager) {
         this.entityManager = entityManager;

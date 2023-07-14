@@ -1,15 +1,16 @@
 package entity;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Autor {
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
+    @Basic
+    private String nombre;
+    @Basic
+    private Boolean alta;
 
     public Long getId() {
         return id;
@@ -19,9 +20,6 @@ public class Autor {
         this.id = id;
     }
 
-    @Basic
-    private String nombre;
-
     public String getNombre() {
         return nombre;
     }
@@ -29,9 +27,6 @@ public class Autor {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    @Basic
-    private Boolean alta;
 
     public Boolean getAlta() {
         return alta;

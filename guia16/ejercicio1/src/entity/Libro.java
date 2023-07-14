@@ -4,9 +4,25 @@ import jakarta.persistence.*;
 
 @Entity
 public class Libro {
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long isbm;
+    @Basic
+    private String titulo;
+    @Basic
+    private Integer anio;
+    @Basic
+    private Integer ejemplares;
+    @Basic
+    private Integer ejemplares_prestados;
+    @Basic
+    private Integer ejemplares_restantes;
+    @Basic
+    private Boolean alta;
+    @ManyToOne
+    private Autor autor;
+    @ManyToOne
+    private Editorial editorial;
 
     public Long getIsbm() {
         return isbm;
@@ -16,9 +32,6 @@ public class Libro {
         this.isbm = isbm;
     }
 
-    @Basic
-    private String titulo;
-
     public String getTitulo() {
         return titulo;
     }
@@ -26,9 +39,6 @@ public class Libro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
-    @Basic
-    private Integer anio;
 
     public Integer getAnio() {
         return anio;
@@ -38,9 +48,6 @@ public class Libro {
         this.anio = anio;
     }
 
-    @Basic
-    private Integer ejemplares;
-
     public Integer getEjemplares() {
         return ejemplares;
     }
@@ -48,9 +55,6 @@ public class Libro {
     public void setEjemplares(Integer ejemplares) {
         this.ejemplares = ejemplares;
     }
-
-    @Basic
-    private Integer ejemplares_prestados;
 
     public Integer getEjemplares_prestados() {
         return ejemplares_prestados;
@@ -60,9 +64,6 @@ public class Libro {
         this.ejemplares_prestados = ejemplares_prestados;
     }
 
-    @Basic
-    private Integer ejemplares_restantes;
-
     public Integer getEjemplares_restantes() {
         return ejemplares_restantes;
     }
@@ -70,9 +71,6 @@ public class Libro {
     public void setEjemplares_restantes(Integer ejemplares_restantes) {
         this.ejemplares_restantes = ejemplares_restantes;
     }
-
-    @Basic
-    private Boolean alta;
 
     public Boolean getAlta() {
         return alta;
@@ -82,9 +80,6 @@ public class Libro {
         this.alta = alta;
     }
 
-    @ManyToOne
-    private Autor autor;
-
     public Autor getAutor() {
         return autor;
     }
@@ -92,9 +87,6 @@ public class Libro {
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
-
-    @ManyToOne
-    private Editorial editorial;
 
     public Editorial getEditorial() {
         return editorial;

@@ -7,7 +7,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class AutorDAO {
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
 
     public AutorDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -37,12 +37,6 @@ public class AutorDAO {
 
     public List<Autor> getAll() {
         TypedQuery<Autor> query = entityManager.createQuery("SELECT a FROM Autor a", Autor.class);
-        return query.getResultList();
-    }
-
-    public List<Autor> obtenerAutorPorNombre(String nombre) {
-        TypedQuery<Autor> query = entityManager.createQuery("SELECT a FROM Autor a WHERE a.nombre = ?1", Autor.class);
-        query.setParameter(1, nombre);
         return query.getResultList();
     }
 }

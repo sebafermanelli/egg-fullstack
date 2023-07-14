@@ -7,7 +7,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class ClienteDAO {
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
 
     public ClienteDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -31,7 +31,7 @@ public class ClienteDAO {
         entityManager.getTransaction().commit();
     }
 
-    public Cliente getOneId(long id) {
+    public Cliente getOne(long id) {
         return entityManager.find(Cliente.class, id);
     }
 

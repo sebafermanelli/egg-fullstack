@@ -2,14 +2,18 @@ package entity;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
 public class Cliente {
-    @GeneratedValue
     @Id
     private Long id;
+    @Basic
+    private String nombre;
+    @Basic
+    private String apellido;
+    @Basic
+    private String telefono;
 
     public Long getId() {
         return id;
@@ -19,20 +23,6 @@ public class Cliente {
         this.id = id;
     }
 
-    @Id
-    private Long dni;
-
-    public Long getDni() {
-        return dni;
-    }
-
-    public void setDni(Long dni) {
-        this.dni = dni;
-    }
-
-    @Basic
-    private String nombre;
-
     public String getNombre() {
         return nombre;
     }
@@ -41,9 +31,6 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    @Basic
-    private String apellido;
-
     public String getApellido() {
         return apellido;
     }
@@ -51,9 +38,6 @@ public class Cliente {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-
-    @Basic
-    private String telefono;
 
     public String getTelefono() {
         return telefono;

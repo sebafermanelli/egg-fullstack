@@ -3,78 +3,179 @@ import entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import service.*;
 
 import java.sql.Date;
-import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class Main {
+    public static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+    //Establecer conexion a la persistencia "default"
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+    private static EntityManager entityManager = emf.createEntityManager();
+    //DAOs y Servicios
+    private static AutorDAO autorDAO = new AutorDAO(entityManager);
+    public static AutorService autorService = new AutorService(autorDAO);
+    private static EditorialDAO editorialDAO = new EditorialDAO(entityManager);
+    public static EditorialService editorialService = new EditorialService(editorialDAO);
+    private static LibroDAO libroDAO = new LibroDAO(entityManager);
+    public static LibroService libroService = new LibroService(libroDAO, editorialDAO, autorDAO);
+    private static ClienteDAO clienteDAO = new ClienteDAO(entityManager);
+    private static PrestamoDAO prestamoDAO = new PrestamoDAO(entityManager);
+    public static ClienteService clienteService = new ClienteService(clienteDAO, prestamoDAO);
+    public static PrestamoService prestamoService = new PrestamoService(prestamoDAO, clienteDAO, libroDAO);
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = emf.createEntityManager();
-
-        AutorDAO autorDAO = new AutorDAO(entityManager);
-        //AutorService autorService = new AutorService(autorDAO);
-        EditorialDAO editorialDAO = new EditorialDAO(entityManager);
-        //EditorialService editorialService = new EditorialService(editorialDAO);
-        LibroDAO libroDAO = new LibroDAO(entityManager);
-        //LibroService libroService = new LibroService(libroDAO);
-        ClienteDAO clienteDAO = new ClienteDAO(entityManager);
-        //ClienteService clienteService = new ClienteService(clienteDAO);
-        PrestamoDAO prestamoDAO = new PrestamoDAO(entityManager);
-        //PrestamoService prestamoService = new PrestamoService(prestamoDAO);
-
-        if(!(autorDAO.getAll().size() > 0) && !(editorialDAO.getAll().size() > 0) && !(libroDAO.getAll().size() > 0) &&
+        //Cargar datos para tener algunos para utilizar en las consultas
+        if (!(autorDAO.getAll().size() > 0) && !(editorialDAO.getAll().size() > 0) && !(libroDAO.getAll().size() > 0) &&
                 !(clienteDAO.getAll().size() > 0) && !(prestamoDAO.getAll().size() > 0)) {
-            cargarDatos(autorDAO, editorialDAO, libroDAO, clienteDAO, prestamoDAO);
+            cargarDatos();
         }
 
-        /* Ejercicio 1
-        //Enunciado 8
-        System.out.println("Enunciado 8");
-        for (Autor autor: autorDAO.obtenerAutorPorNombre("J.K. Rowling")) {
-            System.out.println(autor.getId() + " - " + autor.getNombre());
-        }
+        //Menu
+        int op;
+        do {
+            System.out.println("################ LIBRERIA ################");
+            System.out.println("1 - Opciones de cliente");
+            System.out.println("2 - Opciones de administrador");
+            System.out.println("0 - Cerrar programa");
+            System.out.print("Ingrese la opcion: ");
+            do {
+                op = scanner.nextInt();
+            } while (op < 0 || op > 2);
 
-        System.out.println();
+            switch (op) {
+                case 0 -> System.out.println("Cerrando programa...");
+                case 1 -> {
+                    System.out.println();
+                    menuCliente();
+                    System.out.println();
+                }
+                case 2 -> {
+                    System.out.println();
+                    System.out.print("Ingrese la contraseña: ");
+                    String password = scanner.next();
+                    if (password.equals("ickkck")) {
+                        menuAdmin();
+                    } else {
+                        System.out.println("Contraseña incorrecta");
+                    }
+                    System.out.println();
+                }
+                default -> System.out.println("Ingrese una opcion valida");
+            }
+        } while (op != 0);
 
-        //Enunciado 9
-        System.out.println("Enunciado 9");
-        System.out.println(libroDAO.getOne(5L).getTitulo());
-
-        System.out.println();
-
-        //Enunciado 10
-        System.out.println("Enunciado 10");
-        for (Libro libro: libroDAO.obtenerLibroPorTitulo("Da Vinci")) {
-            System.out.println(libro.getIsbm() + " - " + libro.getTitulo());
-        }
-
-        System.out.println();
-
-        //Enunciado 11
-        System.out.println("Enunciado 11");
-        for (Libro libro: libroDAO.obtenerLibroPorNombreAutor("Gabriel García Márquez")) {
-            System.out.println(libro.getIsbm() + " - " + libro.getTitulo());
-        }
-
-        System.out.println();
-
-        //Enunciado 12
-        System.out.println("Enunciado 12");
-        for (Libro libro: libroDAO.obtenerLibroPorNombreEditorial("Bloomsbury")) {
-            System.out.println(libro.getIsbm() + " - " + libro.getTitulo());
-        }*/
-
-        /* Ejercicio 1 Extra */
-        //
-
+        //Cerrar conexion a la persistencia
         entityManager.close();
         emf.close();
     }
 
-    public static void cargarDatos(AutorDAO autorDAO, EditorialDAO editorialDAO, LibroDAO libroDAO,
-                                   ClienteDAO clienteDAO, PrestamoDAO prestamoDAO) {
+    private static void menuCliente() {
+        int op;
+
+        System.out.print("Ingrese su DNI: ");
+        long idCliente = scanner.nextLong();
+        Cliente cliente = clienteDAO.getOne(idCliente);
+        if (cliente == null) {
+            System.out.println("DNI de Cliente incorrecto");
+        } else {
+            do {
+                System.out.println("################ " + cliente.getApellido() + " " + cliente.getNombre() + " " +
+                        "################");
+                System.out.println("1 - Pedir un libro");
+                System.out.println("2 - Devolver un libro");
+                System.out.println("3 - Consultar libros disponibles");
+                System.out.println("4 - Consultar mis prestamos activos");
+                System.out.println("0 - Volver al menu principal");
+                System.out.print("Ingrese la opcion: ");
+                do {
+                    op = scanner.nextInt();
+                } while (op < 0 || op > 4);
+
+                switch (op) {
+                    case 0 -> System.out.println();
+                    case 1 -> {
+                        System.out.println();
+                        prestamoService.generarPrestamo(cliente);
+                        System.out.println();
+                    }
+                    case 2 -> {
+                        System.out.println();
+                        prestamoService.devolverPrestamo(cliente);
+                        System.out.println();
+                    }
+                    case 3 -> {
+                        System.out.println();
+                        libroService.librosDisponibles();
+                        System.out.println();
+                    }
+                    case 4 -> {
+                        System.out.println();
+                        prestamoService.prestamosActivos(cliente);
+                        System.out.println();
+                    }
+                    default -> System.out.println("Ingrese una opcion valida");
+                }
+            } while (op != 0);
+        }
+    }
+
+    private static void menuAdmin() {
+        int op;
+        do {
+            System.out.println("################ ADMINISTRADOR ################");
+            System.out.println("1 - Listado de prestamos activos totales");
+            System.out.println("2 - Listado prestamos activos de un cliente");
+            System.out.println("3 - Listado de clientes");
+            System.out.println("4 - Agregar un cliente");
+            System.out.println("5 - Eliminar un cliente");
+            System.out.println("0 - Volver al menu principal");
+            System.out.print("Ingrese la opcion: ");
+            do {
+                op = scanner.nextInt();
+            } while (op < 0 || op > 5);
+
+            switch (op) {
+                case 0 -> System.out.println();
+                case 1 -> {
+                    System.out.println();
+                    prestamoService.prestamosActivosTotales();
+                    System.out.println();
+                }
+                case 2 -> {
+                    System.out.println();
+                    System.out.print("Ingrese el DNI del cliente: ");
+                    long idCliente = scanner.nextLong();
+                    Cliente cliente = clienteDAO.getOne(idCliente);
+                    if (cliente == null) {
+                        System.out.println("DNI de Cliente incorrecto");
+                    } else {
+                        prestamoService.prestamosActivos(cliente);
+                    }
+                    System.out.println();
+                }
+                case 3 -> {
+                    System.out.println();
+                    clienteService.listadoClientes();
+                    System.out.println();
+                }
+                case 4 -> {
+                    System.out.println();
+                    clienteService.agregarCliente();
+                    System.out.println();
+                }
+                case 5 -> {
+                    System.out.println();
+                    clienteService.eliminarCliente();
+                    System.out.println();
+                }
+                default -> System.out.println("Ingrese una opcion valida");
+            }
+        } while (op != 0);
+    }
+
+    public static void cargarDatos() {
         //Autores
         Autor autor1 = new Autor();
         autor1.setAlta(true);
@@ -168,25 +269,24 @@ public class Main {
 
         //Clientes
         Cliente cliente1 = new Cliente();
-        cliente1.setDni(43455736L);
+        cliente1.setId(43455736L);
         cliente1.setNombre("Sebastian");
         cliente1.setApellido("Fermanelli");
-        cliente1.setTelefono("2478-409043");
+        cliente1.setTelefono("2322-328423");
 
         Cliente cliente2 = new Cliente();
-        cliente2.setDni(37902842L);
+        cliente2.setId(37902842L);
         cliente2.setNombre("Maria");
         cliente2.setApellido("Garcia");
         cliente2.setTelefono("2474-432357");
 
         Cliente cliente3 = new Cliente();
-        cliente3.setDni(22938445L);
+        cliente3.setId(22938445L);
         cliente3.setNombre("Juan");
         cliente3.setApellido("Lopez");
         cliente3.setTelefono("341-3892748");
 
         //Prestamos
-        long hoy = LocalDateTime.now().toInstant(java.time.ZoneOffset.UTC).toEpochMilli();
         Prestamo prestamo1 = new Prestamo();
         Date fechaPrestamo1 = Date.valueOf("2020-04-03");
         prestamo1.setFecha_prestamo(fechaPrestamo1);
@@ -194,22 +294,14 @@ public class Main {
         prestamo1.setFecha_devolucion(fechaDevolucion1);
         prestamo1.setCliente(cliente1);
         prestamo1.setLibro(libro4);
-        if (fechaDevolucion1.getTime() > hoy && libro4.getAlta()) {
-            libro4.setEjemplares_restantes(libro4.getEjemplares_restantes() - 1);
-            libro4.setEjemplares_prestados(libro4.getEjemplares_prestados() + 1);
-        }
 
         Prestamo prestamo2 = new Prestamo();
         Date fechaPrestamo2 = Date.valueOf("2023-07-08");
         prestamo2.setFecha_prestamo(fechaPrestamo2);
-        Date fechaDevolucion2 = Date.valueOf("2023-07-20");
+        Date fechaDevolucion2 = Date.valueOf("2023-07-10");
         prestamo2.setFecha_devolucion(fechaDevolucion2);
         prestamo2.setCliente(cliente3);
         prestamo2.setLibro(libro5);
-        if (fechaDevolucion2.getTime() > hoy && libro5.getAlta()) {
-            libro5.setEjemplares_restantes(libro5.getEjemplares_restantes() - 1);
-            libro5.setEjemplares_prestados(libro5.getEjemplares_prestados() + 1);
-        }
 
         //Guardar datos
         autorDAO.create(autor1);

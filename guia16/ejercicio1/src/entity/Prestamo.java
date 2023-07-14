@@ -1,14 +1,24 @@
 package entity;
 
+import com.sun.istack.Nullable;
 import jakarta.persistence.*;
 
 import java.sql.Date;
 
 @Entity
 public class Prestamo {
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
+    @Basic
+    private Date fecha_prestamo;
+    @Basic
+    @Nullable
+    private Date fecha_devolucion;
+    @ManyToOne
+    private Libro libro;
+    @ManyToOne
+    private Cliente cliente;
 
     public Long getId() {
         return id;
@@ -18,9 +28,6 @@ public class Prestamo {
         this.id = id;
     }
 
-    @Basic
-    private Date fecha_prestamo;
-
     public Date getFecha_prestamo() {
         return fecha_prestamo;
     }
@@ -28,9 +35,6 @@ public class Prestamo {
     public void setFecha_prestamo(Date fecha_prestamo) {
         this.fecha_prestamo = fecha_prestamo;
     }
-
-    @Basic
-    private Date fecha_devolucion;
 
     public Date getFecha_devolucion() {
         return fecha_devolucion;
@@ -40,9 +44,6 @@ public class Prestamo {
         this.fecha_devolucion = fecha_devolucion;
     }
 
-    @ManyToOne
-    private Libro libro;
-
     public Libro getLibro() {
         return libro;
     }
@@ -50,9 +51,6 @@ public class Prestamo {
     public void setLibro(Libro libro) {
         this.libro = libro;
     }
-
-    @ManyToOne
-    private Cliente cliente;
 
     public Cliente getCliente() {
         return cliente;
