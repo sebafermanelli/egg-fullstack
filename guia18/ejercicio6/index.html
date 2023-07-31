@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ejercicio 6</title>
+    </head>
+    <body>
+        <form action="">
+            <h1>Registrar un usuario</h1>
+            <label for="usuario">Nombre del usuario</label>
+            <br />
+            <input type="text" name="usuario" id="usuario" />
+            <br />
+            <label for="contraseña">Contraseña del usuario</label>
+            <br />
+            <input type="password" name="contraseña" id="contraseña" />
+            <br />
+            <label for="edad">Edad del usuario</label>
+            <br />
+            <input type="number" name="edad" id="edad" />
+            <br />
+            <label for="nacimiento">Fecha de nacimiento del usuario</label>
+            <br />
+            <input type="date" name="nacimiento" id="nacimiento" />
+            <br />
+            <p>Sexo del usuario</p>
+            <input type="radio" name="sexo" id="hombre" />
+            <label for="hombre">Hombre</label>
+            <br />
+            <input type="radio" name="sexo" id="mujer" />
+            <label for="mujer">Mujer</label>
+            <br />
+            <input type="radio" name="sexo" id="indefinido" />
+            <label for="indefinido">Prefiero no decir</label>
+            <br />
+            <label for="pais">Pais nacimiento del usuario</label>
+            <br />
+            <select name="pais" id="pais">
+                <option value="1" disabled selected>
+                    Seleccione una opcion
+                </option>
+                <option value="2">Argentina</option>
+                <option value="3">Uruguay</option>
+                <option value="4">Chile</option>
+            </select>
+            <br />
+            <button type="submit">Enviar</button>
+            <button type="reset">Borrar</button>
+        </form>
+    </body>
+</html>

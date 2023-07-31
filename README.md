@@ -1,4 +1,4 @@
-# Programación Full stack
+# Programación Full Stack
 
 ## AP - Temario
 
@@ -20,8 +20,11 @@
 16. JPA 
 17. Integrador 
 18. HTML & CSS 
-19. Spring MVC 
+19. JavaScript
+20. React
+21. Integrador
+22. Spring
 20. Buenas prácticas de Java 
-21. Spring Register & Login 
-22. JavaScript 
-23. React
+21. Spring 2
+22. Repaso
+23. Integrador final
