@@ -1,0 +1,22 @@
+table {
+    text-align: center;
+    border-collapse: collapse;
+    border-color: #333;
+}
+
+thead {
+    background-color:#d6d6d6;
+}
+
+.moneda {
+    text-align: left;
+    background-color: #E6F3FF;
+}
+
+.alterrow {
+    background-color: #FFFFCC;
+}
+
+td, th {
+    padding: 4px;
+}
