@@ -8,7 +8,7 @@ function getFormValores() {
     const persona = {
         nombre: "",
         apellido: "",
-    }
+    };
     persona.nombre = nombre.value;
     persona.apellido = apellido.value;
 
