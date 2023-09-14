@@ -55,11 +55,12 @@ public class Operacion {
     }
 
     public void crearOperacion() {
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese el primer numero para operar:");
-        this.num1 = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese el primer numero para operar:");
+            this.num1 = leer.nextInt();
 
-        System.out.println("Ingrese el segundo numero para operar:");
-        this.num2 = leer.nextInt();
+            System.out.println("Ingrese el segundo numero para operar:");
+            this.num2 = leer.nextInt();
+        }
     }
 }

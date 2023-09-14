@@ -49,16 +49,17 @@ public class Puntos {
     }
 
     public void crearPuntos() {
-        Scanner leer = new Scanner(System.in);
-        System.out.print("X1: ");
-        this.x1 = leer.nextInt();
-        System.out.print("Y1: ");
-        this.y1 = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.print("X1: ");
+            this.x1 = leer.nextInt();
+            System.out.print("Y1: ");
+            this.y1 = leer.nextInt();
 
-        System.out.print("X2: ");
-        this.x2 = leer.nextInt();
-        System.out.print("Y2: ");
-        this.y2 = leer.nextInt();
+            System.out.print("X2: ");
+            this.x2 = leer.nextInt();
+            System.out.print("Y2: ");
+            this.y2 = leer.nextInt();
+        }
     }
 
     public double distancia() {

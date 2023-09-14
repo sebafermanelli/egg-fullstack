@@ -30,8 +30,9 @@ public class Circunferencia {
     }
 
     public void crearCircunferencia() {
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Escribe el radio de la circunferencia:");
-        this.radio = leer.nextDouble();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Escribe el radio de la circunferencia:");
+            this.radio = leer.nextDouble();
+        }
     }
 }

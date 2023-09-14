@@ -9,15 +9,15 @@ public class ejercicio5 {
         int costo;
         double costoFinal;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese una clase de socio (A, B o C):");
-        do {
-            clase = leer.next().toUpperCase().charAt(0);
-        } while (clase != 'A' && clase != 'B' && clase != 'C');
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese una clase de socio (A, B o C):");
+            do {
+                clase = leer.next().toUpperCase().charAt(0);
+            } while (clase != 'A' && clase != 'B' && clase != 'C');
 
-        System.out.println("Ingrese el costo del tratamiento:");
-        costo = leer.nextInt();
-
+            System.out.println("Ingrese el costo del tratamiento:");
+            costo = leer.nextInt();
+        }
         costoFinal = 0;
 
         if (clase == 'A') {

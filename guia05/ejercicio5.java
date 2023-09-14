@@ -8,15 +8,15 @@ public class ejercicio5 {
         int[][] matriz = new int[3][3];
         boolean antisimetrica = true;
 
-        Scanner leer = new Scanner(System.in);
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                System.out.println("Ingrese el numero de la fila: " + i + " columna: " + j + ":");
-                matriz[i][j] = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz.length; j++) {
+                    System.out.println("Ingrese el numero de la fila: " + i + " columna: " + j + ":");
+                    matriz[i][j] = leer.nextInt();
+                }
+                System.out.println();
             }
-            System.out.println();
         }
-
         System.out.println("Matriz:");
 
         for (int i = 0; i < matriz.length; i++) {

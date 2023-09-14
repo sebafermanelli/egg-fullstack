@@ -14,12 +14,10 @@ import java.util.Scanner;
 public class PrestamoService {
     private Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     private PrestamoDAO prestamoDAO;
-    private ClienteDAO clienteDAO;
     private LibroDAO libroDAO;
 
     public PrestamoService(PrestamoDAO prestamoDAO, ClienteDAO clienteDAO, LibroDAO libroDAO) {
         this.prestamoDAO = prestamoDAO;
-        this.clienteDAO = clienteDAO;
         this.libroDAO = libroDAO;
     }
 

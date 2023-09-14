@@ -7,13 +7,8 @@ import entity.Libro;
 
 public class LibroService {
     private LibroDAO libroDAO;
-    private EditorialDAO editorialDAO;
-    private AutorDAO autorDAO;
-
     public LibroService(LibroDAO libroDAO, EditorialDAO editorialDAO, AutorDAO autorDAO) {
         this.libroDAO = libroDAO;
-        this.editorialDAO = editorialDAO;
-        this.autorDAO = autorDAO;
     }
 
     public void librosDisponibles() {

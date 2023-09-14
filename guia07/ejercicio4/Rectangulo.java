@@ -31,12 +31,13 @@ public class Rectangulo {
     }
 
     public void crearRectangulo() {
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese la base del rectangulo:");
-        this.base = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese la base del rectangulo:");
+            this.base = leer.nextInt();
 
-        System.out.println("Ingrese la altura del rectangulo:");
-        this.altura = leer.nextInt();
+            System.out.println("Ingrese la altura del rectangulo:");
+            this.altura = leer.nextInt();
+        }
     }
 
     public int superficie() {

@@ -10,14 +10,14 @@ public class ejercicio6 {
         int fila = (int) (Math.random() * 20);
         int pos = 0;
 
-        Scanner leer = new Scanner(System.in);
-        for (int i = 0; i < palabras.length; i++) {
-            System.out.println("Ingrese la palabra " + (i + 1) + ": ");
-            do {
-                palabras[i] = leer.next();
-            } while (palabras[i].length() < 3 || palabras[i].length() > 5);
+        try (Scanner leer = new Scanner(System.in)) {
+            for (int i = 0; i < palabras.length; i++) {
+                System.out.println("Ingrese la palabra " + (i + 1) + ": ");
+                do {
+                    palabras[i] = leer.next();
+                } while (palabras[i].length() < 3 || palabras[i].length() > 5);
+            }
         }
-
         for (int i = 0; i < palabras.length; i++) {
             String palabra = palabras[i];
             int longitud = palabra.length();

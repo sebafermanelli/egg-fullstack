@@ -7,10 +7,10 @@ public class ejercicio7 {
     public static void main(String[] args) {
         int n;
 
-        Scanner leer = new Scanner(System.in);
-
-        System.out.println("Ingrese el valor de N para la serie:");
-        n = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese el valor de N para la serie:");
+            n = leer.nextInt();
+        }
 
         int[] vector = new int[n];
 

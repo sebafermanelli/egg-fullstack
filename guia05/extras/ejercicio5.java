@@ -6,7 +6,8 @@ public class ejercicio5 {
 
     public static void main(String[] args) {
 
-        Scanner leer = new Scanner(System.in);
+        try (Scanner leer = new Scanner(System.in)) {
+        }
         int[][] matriz = new int[3][3];
         int suma = 0;
 

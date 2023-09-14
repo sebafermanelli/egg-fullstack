@@ -7,10 +7,10 @@ public class ejercicio5 {
         int num, doble, triple;
         double raiz;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese un numero:");
-        num = leer.nextInt();
-
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese un numero:");
+            num = leer.nextInt();
+        }
         doble = num * 2;
         triple = num * 3;
         raiz = Math.sqrt(num);

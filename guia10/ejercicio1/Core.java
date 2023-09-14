@@ -6,24 +6,24 @@ import java.util.Scanner;
 
 public class Core {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            boolean repeat = true;
 
-        boolean repeat = true;
+            do {
+                MascotaService.crearMascota();
 
-        do {
-            MascotaService.crearMascota();
+                System.out.print("Desea agregar otra mascota? S/N: ");
+                char rta = scanner.next().toUpperCase().charAt(0);
+                while (rta != 'S' && rta != 'N') {
+                    System.out.print("Ingrese S/N: ");
+                    rta = scanner.next().toUpperCase().charAt(0);
+                }
 
-            System.out.print("Desea agregar otra mascota? S/N: ");
-            char rta = scanner.next().toUpperCase().charAt(0);
-            while (rta != 'S' && rta != 'N') {
-                System.out.print("Ingrese S/N: ");
-                rta = scanner.next().toUpperCase().charAt(0);
-            }
-
-            if (rta == 'N') {
-                repeat = false;
-            }
-        } while (repeat);
+                if (rta == 'N') {
+                    repeat = false;
+                }
+            } while (repeat);
+        }
 
         MascotaService.MostrarListaMascotas();
     }

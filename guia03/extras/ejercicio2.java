@@ -7,13 +7,13 @@ public class ejercicio2 {
     public static void main(String[] args) {
         int a, b, c, d, aux;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese A, B, C y D:");
-        a = leer.nextInt();
-        b = leer.nextInt();
-        c = leer.nextInt();
-        d = leer.nextInt();
-
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese A, B, C y D:");
+            a = leer.nextInt();
+            b = leer.nextInt();
+            c = leer.nextInt();
+            d = leer.nextInt();
+        }
         System.out.println("A valia " + a);
         System.out.println("B valia " + b);
         System.out.println("C valia " + c);

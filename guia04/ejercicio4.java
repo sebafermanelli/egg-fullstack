@@ -7,10 +7,10 @@ public class ejercicio4 {
     public static void main(String[] args) {
         int numero;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese un numero para saber si es primo o no:");
-        numero = leer.nextInt();
-
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese un numero para saber si es primo o no:");
+            numero = leer.nextInt();
+        }
         if (EsPrimo(numero)) {
             System.out.println("El numero " + numero + " es primo");
         } else {

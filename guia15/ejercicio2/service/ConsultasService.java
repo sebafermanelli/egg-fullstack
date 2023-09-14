@@ -45,8 +45,6 @@ public class ConsultasService {
         System.out.println();
 
         System.out.println("Enunciado D:");
-        String fechaDesde2 = "2020-08-01";
-        Date fechaDesdeDate2 = Date.valueOf(fechaDesde2);
         Collection<Casa> casasD = casasDao.enunciadoD(fechaDesdeDate, 160);
         for (Casa c : casasD) {
             System.out.println(c.getId() + " - " + c.getFecha_desde() + " - " + c.getFecha_hasta());

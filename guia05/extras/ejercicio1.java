@@ -7,18 +7,19 @@ public class ejercicio1 {
     public static void main(String[] args) {
         int n;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingresa el tamaño del arreglo:");
-        n = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingresa el tamaño del arreglo:");
+            n = leer.nextInt();
 
-        int[] elementos = new int[n];
+            int[] elementos = new int[n];
 
-        for (int i = 0; i < elementos.length; i++) {
-            System.out.println("Ingrese un numero a sumar:");
-            elementos[i] = leer.nextInt();
+            for (int i = 0; i < elementos.length; i++) {
+                System.out.println("Ingrese un numero a sumar:");
+                elementos[i] = leer.nextInt();
+            }
+
+            System.out.println("El valor de la suma de los elementos: " + Sumar(elementos));
         }
-
-        System.out.println("El valor de la suma de los elementos: " + Sumar(elementos));
     }
 
     public static int Sumar(int[] e) {

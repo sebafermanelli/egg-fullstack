@@ -8,25 +8,25 @@ public class ejercicio2 {
         int n, numBuscar;
         boolean encontro = false;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese el tamaño del vector:");
-        n = leer.nextInt();
-        int[] aleatorios = new int[n];
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese el tamaño del vector:");
+            n = leer.nextInt();
+            int[] aleatorios = new int[n];
 
-        for (int i = 0; i < aleatorios.length; i++) {
-            aleatorios[i] = (int) (Math.random() * 10);
-        }
+            for (int i = 0; i < aleatorios.length; i++) {
+                aleatorios[i] = (int) (Math.random() * 10);
+            }
 
-        System.out.println("Ingrese un numero a buscar entre el 0-10:");
-        numBuscar = leer.nextInt();
+            System.out.println("Ingrese un numero a buscar entre el 0-10:");
+            numBuscar = leer.nextInt();
 
-        for (int i = 0; i < aleatorios.length; i++) {
-            if (numBuscar == aleatorios[i]) {
-                System.out.println("El numero: " + numBuscar + " se encuentra en la posicion: " + (i + 1));
-                encontro = true;
+            for (int i = 0; i < aleatorios.length; i++) {
+                if (numBuscar == aleatorios[i]) {
+                    System.out.println("El numero: " + numBuscar + " se encuentra en la posicion: " + (i + 1));
+                    encontro = true;
+                }
             }
         }
-
         if (!encontro) {
             System.out.println("No se encontro ninguna coincidencia");
         }

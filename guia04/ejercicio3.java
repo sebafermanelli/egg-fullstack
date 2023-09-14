@@ -8,15 +8,15 @@ public class ejercicio3 {
         int euros;
         char moneda;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese la cantidad de euros a convertir:");
-        euros = leer.nextInt();
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese la cantidad de euros a convertir:");
+            euros = leer.nextInt();
 
-        leer.nextLine(); // Consumir el final de linea del int para que el nextLine() siguiente no de error
+            leer.nextLine(); // Consumir el final de linea del int para que el nextLine() siguiente no de error
 
-        System.out.println("Ingrese la moneda: (D - Dolares / Y - Yenes / L - Libras)");
-        moneda = leer.nextLine().toUpperCase().charAt(0);
-
+            System.out.println("Ingrese la moneda: (D - Dolares / Y - Yenes / L - Libras)");
+            moneda = leer.nextLine().toUpperCase().charAt(0);
+        }
         ConvertirA(moneda, euros);
     }
 

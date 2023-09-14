@@ -11,17 +11,17 @@ public class ejercicio6 {
         int diagonal, auxFila, auxColumna;
         boolean magic = true;
 
-        Scanner leer = new Scanner(System.in);
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                System.out.println("Ingrese el numero de la fila: " + i + " columna: " + j + ":");
-                do {
-                    matriz[i][j] = leer.nextInt();
-                } while (matriz[i][j] < 1 || matriz[i][j] > 9);
+        try (Scanner leer = new Scanner(System.in)) {
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz.length; j++) {
+                    System.out.println("Ingrese el numero de la fila: " + i + " columna: " + j + ":");
+                    do {
+                        matriz[i][j] = leer.nextInt();
+                    } while (matriz[i][j] < 1 || matriz[i][j] > 9);
+                }
+                System.out.println();
             }
-            System.out.println();
         }
-
         System.out.println("Matriz:");
 
         for (int i = 0; i < matriz.length; i++) {

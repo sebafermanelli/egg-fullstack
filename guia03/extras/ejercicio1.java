@@ -7,10 +7,10 @@ public class ejercicio1 {
     public static void main(String[] args) {
         int tiempo, dias, horas;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese el tiempo en minutos:");
-        tiempo = leer.nextInt();
-
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese el tiempo en minutos:");
+            tiempo = leer.nextInt();
+        }
         dias = tiempo / 1440;
         tiempo = tiempo % 1440;
 

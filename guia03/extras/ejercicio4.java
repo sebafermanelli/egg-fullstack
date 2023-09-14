@@ -7,10 +7,10 @@ public class ejercicio4 {
     public static void main(String[] args) {
         int num;
 
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese un numero del 1 al 10 para pasar a romano:");
-        num = leer.nextInt();
-
+        try (Scanner leer = new Scanner(System.in)) {
+            System.out.println("Ingrese un numero del 1 al 10 para pasar a romano:");
+            num = leer.nextInt();
+        }
         switch (num) {
             case 1:
                 System.out.println("I");

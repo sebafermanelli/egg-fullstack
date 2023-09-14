@@ -9,29 +9,30 @@ public class Core {
         boolean continuar = true;
         int saldo, retiro;
 
-        Scanner leer = new Scanner(System.in);
-        Cuenta cliente = new Cuenta();
+        try (Scanner leer = new Scanner(System.in)) {
+            Cuenta cliente = new Cuenta();
 
-        System.out.println("Ingrese el nombre del titular de la cuenta: ");
-        nombre = leer.nextLine();
-        System.out.println("Ingrese el saldo de la cuenta:");
-        saldo = leer.nextInt();
+            System.out.println("Ingrese el nombre del titular de la cuenta: ");
+            nombre = leer.nextLine();
+            System.out.println("Ingrese el saldo de la cuenta:");
+            saldo = leer.nextInt();
 
-        cliente.setTitular(nombre);
-        cliente.setSaldo(saldo);
+            cliente.setTitular(nombre);
+            cliente.setSaldo(saldo);
 
-        while (continuar) {
-            System.out.println("Ingrese el monto a retirar de la cuenta de " + cliente.getTitular());
-            retiro = leer.nextInt();
+            while (continuar) {
+                System.out.println("Ingrese el monto a retirar de la cuenta de " + cliente.getTitular());
+                retiro = leer.nextInt();
 
-            cliente.retirar_dinero(retiro);
+                cliente.retirar_dinero(retiro);
 
-            System.out.println("¿Desea hacer otra operacion? (S/N)");
-            do {
-                rta = leer.nextLine().toUpperCase();
-            } while (!rta.equals("S") && !rta.equals("N"));
-            if (rta.equals("N")) {
-                continuar = false;
+                System.out.println("¿Desea hacer otra operacion? (S/N)");
+                do {
+                    rta = leer.nextLine().toUpperCase();
+                } while (!rta.equals("S") && !rta.equals("N"));
+                if (rta.equals("N")) {
+                    continuar = false;
+                }
             }
         }
     }
