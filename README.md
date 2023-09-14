@@ -2,15 +2,15 @@
 
 ## AP - Temario
 
-1. Git con GitHub 
-2. Introducción a Java 
-3. Estructuras de control en Java 
-4. Subprogramas en Java 
-5. Arreglos en Java 
-6. Git con GitHub 2 
-7. Programación Orientada a Objetos 
-8. Clases de Servicio 
-9. Clases de Utilidad 
+01. Git con GitHub 
+02. Introducción a Java 
+03. Estructuras de control en Java 
+04. Subprogramas en Java 
+05. Arreglos en Java 
+06. Git con GitHub 2 
+07. Programación Orientada a Objetos 
+08. Clases de Servicio 
+09. Clases de Utilidad 
 10. Colecciones 
 11. Relaciones entre Clases 
 12. Herencia 
@@ -22,9 +22,5 @@
 18. HTML & CSS 
 19. JavaScript
 20. React
-21. Integrador
+21. Integrador & Buenas prácticas de Java 
 22. Spring
-20. Buenas prácticas de Java 
-21. Spring 2
-22. Repaso
-23. Integrador final
