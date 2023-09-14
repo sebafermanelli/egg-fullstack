@@ -1,6 +1,6 @@
-package guia9.extras.ejercicio2.services;
+package guia09.extras.ejercicio2.services;
 
-import guia9.extras.ejercicio2.entities.Ahorcado;
+import guia09.extras.ejercicio2.entities.Ahorcado;
 
 import java.util.Scanner;
 

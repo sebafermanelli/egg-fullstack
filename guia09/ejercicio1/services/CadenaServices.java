@@ -1,6 +1,6 @@
-package guia9.ejercicio1.services;
+package guia09.ejercicio1.services;
 
-import guia9.ejercicio1.entities.Cadena;
+import guia09.ejercicio1.entities.Cadena;
 
 public class CadenaServices {
 

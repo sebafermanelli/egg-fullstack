@@ -1,6 +1,6 @@
-package guia8.ejercicio2.servicios;
+package guia08.ejercicio2.servicios;
 
-import guia8.ejercicio2.entidades.Cafetera;
+import guia08.ejercicio2.entidades.Cafetera;
 
 import java.util.Scanner;
 

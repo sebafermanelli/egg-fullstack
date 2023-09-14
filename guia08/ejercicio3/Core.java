@@ -1,7 +1,7 @@
-package guia8.ejercicio3;
+package guia08.ejercicio3;
 
-import guia8.ejercicio3.entidades.Persona;
-import guia8.ejercicio3.servicios.PersonaServices;
+import guia08.ejercicio3.entidades.Persona;
+import guia08.ejercicio3.servicios.PersonaServices;
 
 public class Core {
 

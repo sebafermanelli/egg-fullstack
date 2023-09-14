@@ -1,4 +1,4 @@
-package guia7.ejercicio3;
+package guia07.ejercicio3;
 
 public class Core {
 

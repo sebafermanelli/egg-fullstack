@@ -1,7 +1,7 @@
-package guia9.integrador;
+package guia09.integrador;
 
-import guia9.integrador.entities.Estudiante;
-import guia9.integrador.services.EstudianteService;
+import guia09.integrador.entities.Estudiante;
+import guia09.integrador.services.EstudianteService;
 
 import java.util.Arrays;
 

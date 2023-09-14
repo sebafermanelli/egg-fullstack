@@ -1,4 +1,4 @@
-package guia8.extras.ejercicio2.entidades;
+package guia08.extras.ejercicio2.entidades;
 
 public class NIF {
     long dni;

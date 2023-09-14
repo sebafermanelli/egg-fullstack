@@ -1,7 +1,7 @@
-package guia9.ejercicio6;
+package guia09.ejercicio6;
 
-import guia9.ejercicio6.entities.Curso;
-import guia9.ejercicio6.services.CursoService;
+import guia09.ejercicio6.entities.Curso;
+import guia09.ejercicio6.services.CursoService;
 
 public class Core {
     public static void main(String[] args) {

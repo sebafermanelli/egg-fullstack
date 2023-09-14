@@ -1,4 +1,4 @@
-package guia9.ejercicio5.entities;
+package guia09.ejercicio5.entities;
 
 import java.util.Date;
 

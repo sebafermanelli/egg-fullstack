@@ -1,4 +1,4 @@
-package guia8.ejercicio1.entidades;
+package guia08.ejercicio1.entidades;
 
 public class CuentaBancaria {
     int numeroCuenta;

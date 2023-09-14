@@ -1,4 +1,4 @@
-package guia7.extras.ejercicio1;
+package guia07.extras.ejercicio1;
 
 public class Cancion {
 

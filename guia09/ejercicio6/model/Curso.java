@@ -1,4 +1,4 @@
-package guia9.ejercicio6.entities;
+package guia09.ejercicio6.entities;
 
 public class Curso {
     String nombreCurso;

@@ -1,6 +1,6 @@
-package guia8.extras.ejercicio2.servicios;
+package guia08.extras.ejercicio2.servicios;
 
-import guia8.extras.ejercicio2.entidades.NIF;
+import guia08.extras.ejercicio2.entidades.NIF;
 
 import java.util.Scanner;
 

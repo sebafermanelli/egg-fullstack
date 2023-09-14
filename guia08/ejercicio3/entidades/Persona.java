@@ -1,4 +1,4 @@
-package guia8.ejercicio3.entidades;
+package guia08.ejercicio3.entidades;
 
 public class Persona {
     private String nombre;

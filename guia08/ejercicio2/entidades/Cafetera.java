@@ -1,4 +1,4 @@
-package guia8.ejercicio2.entidades;
+package guia08.ejercicio2.entidades;
 
 public class Cafetera {
 

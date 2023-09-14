@@ -1,6 +1,6 @@
-package guia9.ejercicio3;
+package guia09.ejercicio3;
 
-import guia9.ejercicio3.services.ArrayService;
+import guia09.ejercicio3.services.ArrayService;
 
 public class Core {
     public static void main(String[] args) {

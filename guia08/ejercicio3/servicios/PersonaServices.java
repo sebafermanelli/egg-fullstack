@@ -1,6 +1,6 @@
-package guia8.ejercicio3.servicios;
+package guia08.ejercicio3.servicios;
 
-import guia8.ejercicio3.entidades.Persona;
+import guia08.ejercicio3.entidades.Persona;
 
 import java.util.Scanner;
 

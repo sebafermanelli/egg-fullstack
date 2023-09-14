@@ -1,4 +1,4 @@
-package guia9.ejercicio2.entities;
+package guia09.ejercicio2.entities;
 
 public class ParDeNumeros {
     double num1, num2;

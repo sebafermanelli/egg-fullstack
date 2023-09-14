@@ -1,7 +1,7 @@
-package guia8.ejercicio1;
+package guia08.ejercicio1;
 
-import guia8.ejercicio1.entidades.CuentaBancaria;
-import guia8.ejercicio1.servicios.CuentaBancariaServices;
+import guia08.ejercicio1.entidades.CuentaBancaria;
+import guia08.ejercicio1.servicios.CuentaBancariaServices;
 
 public class Core {
     public static void main(String[] args) {

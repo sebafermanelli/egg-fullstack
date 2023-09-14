@@ -1,4 +1,4 @@
-package guia8.extras.ejercicio1.entidades;
+package guia08.extras.ejercicio1.entidades;
 
 public class Raices {
 

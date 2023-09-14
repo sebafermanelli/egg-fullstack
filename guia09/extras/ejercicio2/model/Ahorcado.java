@@ -1,4 +1,4 @@
-package guia9.extras.ejercicio2.entities;
+package guia09.extras.ejercicio2.entities;
 
 public class Ahorcado {
     private char[] palabra;

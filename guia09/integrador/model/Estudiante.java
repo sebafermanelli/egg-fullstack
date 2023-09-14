@@ -1,4 +1,4 @@
-package guia9.integrador.entities;
+package guia09.integrador.entities;
 
 public class Estudiante {
     private String nombre;

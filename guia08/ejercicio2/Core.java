@@ -1,7 +1,7 @@
-package guia8.ejercicio2;
+package guia08.ejercicio2;
 
-import guia8.ejercicio2.entidades.Cafetera;
-import guia8.ejercicio2.servicios.CafeteraServices;
+import guia08.ejercicio2.entidades.Cafetera;
+import guia08.ejercicio2.servicios.CafeteraServices;
 
 public class Core {
     public static void main(String[] args) {

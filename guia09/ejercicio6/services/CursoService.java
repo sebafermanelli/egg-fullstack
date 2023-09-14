@@ -1,6 +1,6 @@
-package guia9.ejercicio6.services;
+package guia09.ejercicio6.services;
 
-import guia9.ejercicio6.entities.Curso;
+import guia09.ejercicio6.entities.Curso;
 
 import java.util.Scanner;
 

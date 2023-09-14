@@ -1,6 +1,6 @@
-package guia8.extras.ejercicio1.servicios;
+package guia08.extras.ejercicio1.servicios;
 
-import guia8.extras.ejercicio1.entidades.Raices;
+import guia08.extras.ejercicio1.entidades.Raices;
 
 import java.util.Scanner;
 

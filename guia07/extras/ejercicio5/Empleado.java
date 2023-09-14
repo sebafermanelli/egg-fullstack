@@ -1,4 +1,4 @@
-package guia7.extras.ejercicio5;
+package guia07.extras.ejercicio5;
 
 public class Empleado {
 

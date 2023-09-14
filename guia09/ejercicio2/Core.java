@@ -1,7 +1,7 @@
-package guia9.ejercicio2;
+package guia09.ejercicio2;
 
-import guia9.ejercicio2.entities.ParDeNumeros;
-import guia9.ejercicio2.services.ParDeNumerosService;
+import guia09.ejercicio2.entities.ParDeNumeros;
+import guia09.ejercicio2.services.ParDeNumerosService;
 
 public class Core {
     public static void main(String[] args) {

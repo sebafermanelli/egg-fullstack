@@ -1,6 +1,6 @@
-package guia9.ejercicio5.services;
+package guia09.ejercicio5.services;
 
-import guia9.ejercicio5.entities.Persona;
+import guia09.ejercicio5.entities.Persona;
 
 import java.util.Date;
 import java.util.Scanner;

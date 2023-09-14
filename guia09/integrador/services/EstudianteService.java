@@ -1,6 +1,6 @@
-package guia9.integrador.services;
+package guia09.integrador.services;
 
-import guia9.integrador.entities.Estudiante;
+import guia09.integrador.entities.Estudiante;
 
 import java.util.Scanner;
 

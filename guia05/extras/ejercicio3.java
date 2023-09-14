@@ -1,4 +1,4 @@
-package guia5.extras;
+package guia05.extras;
 
 public class ejercicio3 {
 

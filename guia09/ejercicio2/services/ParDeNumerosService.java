@@ -1,6 +1,6 @@
-package guia9.ejercicio2.services;
+package guia09.ejercicio2.services;
 
-import guia9.ejercicio2.entities.ParDeNumeros;
+import guia09.ejercicio2.entities.ParDeNumeros;
 
 import java.text.DecimalFormat;
 

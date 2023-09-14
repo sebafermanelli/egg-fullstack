@@ -1,6 +1,6 @@
-package guia8.ejercicio1.servicios;
+package guia08.ejercicio1.servicios;
 
-import guia8.ejercicio1.entidades.CuentaBancaria;
+import guia08.ejercicio1.entidades.CuentaBancaria;
 
 import java.util.Scanner;
 

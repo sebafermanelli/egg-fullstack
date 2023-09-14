@@ -1,4 +1,4 @@
-package guia3.extras;
+package guia03.extras;
 
 import java.util.Scanner;
 
