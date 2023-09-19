@@ -35,18 +35,19 @@ public class AutorController {
 
   @GetMapping("/crear")
   public String crearAutor() {
-    return "crearAutor";
+    return "create/crearAutor";
   }
 
   @PostMapping("/registrar")
-  public String register(@RequestParam(required = true) String nombre) {
+  public String register(Model m, @RequestParam(required = true) String nombre) {
     try {
       autorService.crearAutor(nombre);
+      m.addAttribute("exito", "El autor se creo con exito");
     } catch (MyException e) {
-      e.printStackTrace();
-      return "redirect:/autor";
+      m.addAttribute("error", e.getMessage());
+      return this.autores(m);
     }
-    return "redirect:/autor";
+    return this.autores(m);
   }
 
   @GetMapping("/actualizar/{uuid}")
@@ -55,25 +56,27 @@ public class AutorController {
 
     m.addAttribute("autor", autor);
 
-    return "editarAutor";
+    return "edit/editarAutor";
   }
 
   @PutMapping("/guardar/{uuid}")
   public String update(Model m, @PathVariable String uuid, @RequestParam String nombre) {
     try {
       autorService.modificarAutor(uuid, nombre);
+      m.addAttribute("exito", "El autor se edito con exito");
     } catch (MyException e) {
-      e.printStackTrace();
+      m.addAttribute("error", e.getMessage());
     }
 
-    return "redirect:/autor";
+    return this.autores(m);
   }
 
   @DeleteMapping("/eliminar/{uuid}")
   public String delete(Model m, @PathVariable String uuid) {
     autorService.eliminarAutor(uuid);
+    m.addAttribute("exito", "El autor se elimino con exito");
 
-    return "redirect:/autor";
+    return this.autores(m);
   }
 
 }

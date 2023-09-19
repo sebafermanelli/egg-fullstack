@@ -35,18 +35,19 @@ public class EditorialController {
 
   @GetMapping("/crear")
   public String crearEditorial() {
-    return "crearEditorial";
+    return "create/crearEditorial";
   }
 
   @PostMapping("/registrar")
-  public String register(@RequestParam(required = true) String nombre) {
+  public String register(Model m, @RequestParam(required = true) String nombre) {
     try {
       editorialService.crearEditorial(nombre);
+      m.addAttribute("exito", "La editorial se creo con exito");
     } catch (MyException e) {
-      e.printStackTrace();
-      return "redirect:/editorial";
+      m.addAttribute("error", e.getMessage());
+      return this.editoriales(m);
     }
-    return "redirect:/editorial";
+    return this.editoriales(m);
   }
 
   @GetMapping("/actualizar/{uuid}")
@@ -55,24 +56,26 @@ public class EditorialController {
 
     m.addAttribute("editorial", editorial);
 
-    return "editarEditorial";
+    return "edit/editarEditorial";
   }
 
   @PutMapping("/guardar/{uuid}")
   public String update(Model m, @PathVariable String uuid, @RequestParam String nombre) {
     try {
       editorialService.modificarEditorial(uuid, nombre);
+      m.addAttribute("exito", "La editorial se edito con exito");
     } catch (MyException e) {
-      e.printStackTrace();
+      m.addAttribute("error", e.getMessage());
     }
 
-    return "redirect:/editorial";
+    return this.editoriales(m);
   }
 
   @DeleteMapping("/eliminar/{uuid}")
   public String delete(Model m, @PathVariable String uuid) {
     editorialService.eliminarEditoial(uuid);
+    m.addAttribute("exito", "La editorial se elimino con exito");
 
-    return "redirect:/editorial";
+    return this.editoriales(m);
   }
 }

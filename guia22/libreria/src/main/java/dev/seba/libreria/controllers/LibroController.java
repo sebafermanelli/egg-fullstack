@@ -42,62 +42,65 @@ public class LibroController {
   }
 
   @GetMapping("/crear")
-  public String crearLibro() {
-    return "crearLibro";
+  public String crearLibro(Model m) {
+    List<Autor> autores = autorService.listarAutores();
+    List<Editorial> editoriales = editorialService.listarEditoriales();
+
+    m.addAttribute("autores", autores);
+    m.addAttribute("editoriales", editoriales);
+
+    return "create/crearLibro";
   }
 
   @PostMapping("/registrar")
-  public String register(@RequestParam(required = true) Long isbn,
-      @RequestParam(required = true) String titulo,
-      @RequestParam(required = true) String nombreAutor,
-      @RequestParam(required = true) String nombreEditorial,
-      @RequestParam(required = true) Integer ejemplares) {
+  public String register(
+      Model m,
+      @RequestParam(required = false) Long isbn,
+      @RequestParam String titulo,
+      @RequestParam String idAutor,
+      @RequestParam String idEditorial,
+      @RequestParam(required = false) Integer ejemplares) {
     try {
-      Autor a = autorService.buscarAutorPorNombre(nombreAutor);
-      String autor = a.getUuid();
-
-      Editorial e = editorialService.buscarEditorialPorNombre(nombreEditorial);
-      String editorial = e.getUuid();
-
-      libroService.crearLibro(isbn, titulo, ejemplares, autor, editorial);
+      libroService.crearLibro(isbn, titulo, ejemplares, idAutor, idEditorial);
+      m.addAttribute("exito", "El libro se creo con exito");
     } catch (MyException e) {
-      e.printStackTrace();
-      return "redirect:/libro";
+      m.addAttribute("error", e.getMessage());
+      return this.libros(m);
     }
-    return "redirect:/libro";
+    return this.libros(m);
   }
 
   @GetMapping("/actualizar/{isbn}")
   public String update(Model m, @PathVariable Long isbn) {
     Libro libro = libroService.obtenerLibroPorId(isbn);
+    List<Autor> autores = autorService.listarAutores();
+    List<Editorial> editoriales = editorialService.listarEditoriales();
 
     m.addAttribute("libro", libro);
+    m.addAttribute("autores", autores);
+    m.addAttribute("editoriales", editoriales);
 
-    return "editarLibro";
+    return "edit/editarLibro";
   }
 
   @PutMapping("/guardar/{isbn}")
   public String update(Model m, @PathVariable Long isbn, @RequestParam String titulo, @RequestParam Integer ejemplares,
-      @RequestParam String nombreAutor, @RequestParam String nombreEditorial) {
+      @RequestParam String idAutor, @RequestParam String idEditorial) {
     try {
-      Autor a = autorService.buscarAutorPorNombre(nombreAutor);
-      String autor = a.getUuid();
-
-      Editorial e = editorialService.buscarEditorialPorNombre(nombreEditorial);
-      String editorial = e.getUuid();
-
-      libroService.modificarLibro(isbn, titulo, ejemplares, autor, editorial);
+      libroService.modificarLibro(isbn, titulo, ejemplares, idAutor, idEditorial);
+      m.addAttribute("exito", "El libro se edito con exito");
     } catch (MyException e) {
       e.printStackTrace();
     }
 
-    return "redirect:/libro";
+    return this.libros(m);
   }
 
   @DeleteMapping("/eliminar/{isbn}")
   public String delete(Model m, @PathVariable Long isbn) {
     libroService.eliminarLibro(isbn);
+    m.addAttribute("exito", "El libro se elimino con exito");
 
-    return "redirect:/libro";
+    return this.libros(m);
   }
 }
