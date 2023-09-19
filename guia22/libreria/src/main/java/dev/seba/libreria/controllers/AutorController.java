@@ -66,6 +66,7 @@ public class AutorController {
       m.addAttribute("exito", "El autor se edito con exito");
     } catch (MyException e) {
       m.addAttribute("error", e.getMessage());
+      return this.autores(m);
     }
 
     return this.autores(m);

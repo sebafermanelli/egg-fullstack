@@ -90,7 +90,8 @@ public class LibroController {
       libroService.modificarLibro(isbn, titulo, ejemplares, idAutor, idEditorial);
       m.addAttribute("exito", "El libro se edito con exito");
     } catch (MyException e) {
-      e.printStackTrace();
+      m.addAttribute("error", e.getMessage());
+      return this.libros(m);
     }
 
     return this.libros(m);

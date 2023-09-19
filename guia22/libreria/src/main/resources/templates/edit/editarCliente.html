@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Nuevo libro - Admin Panel</title>
+		<title>Editar cliente - Admin Panel</title>
 
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -17,58 +17,41 @@
 			<div class="col-12 col-sm-3 col-md-2" th:insert="~{fragments/sidebar :: sidebar}"></div>
 
 			<div class="col m-3">
-				<span class="fs-4">Nuevo libro</span>
+				<span class="fs-4">Editar cliente</span>
 
 				<hr>
 
-				<form action="/libro/registrar" method="post">
-					<label for="isbn" class="form-label">ISBN</label>
-					<input
-						type="number"
-						id="isbn"
-						class="form-control"
-						placeholder="Ingrese ISBN del libro"
-						name="isbn"
-					/>
+				<form th:action="@{/cliente/guardar/{uuid}(uuid=${cliente.uuid})}" method="post">
+					<input type="hidden" name="_method" value="put" />
 
-					<label for="titulo" class="form-label">Titulo</label>
+					<label for="dni" class="form-label">DNI</label>
 					<input
 						type="text"
-						id="titulo"
+						id="dni"
 						class="form-control"
-						placeholder="Ingrese titulo del libro"
-						name="titulo"
+						th:value="${cliente.dni}"
+						name="dni"
 					/>
 
-					<label for="autor" class="form-label">Autor</label>
+					<label for="nombre" class="form-label">Nombre</label>
 					<input
 						type="text"
-						id="autor"
+						id="nombre"
 						class="form-control"
-						placeholder="Ingrese autor del libro"
-						name="nombreAutor"
+						th:value="${cliente.nombre}"
+						name="nombre"
 					/>
 
-					<label for="editorial" class="form-label">Editorial</label>
+					<label for="telefono" class="form-label">Telefono</label>
 					<input
 						type="text"
-						id="editorial"
+						id="telefono"
 						class="form-control"
-						placeholder="Ingrese editorial del libro"
-						name="nombreEditorial"
+						th:value="${cliente.telefono}"
+						name="telefono"
 					/>
-
-					<label for="ejemplares" class="form-label">Ejemplares</label>
-					<input
-						type="number"
-						id="ejemplares"
-						class="form-control"
-						placeholder="Ingrese ejemplares del libro"
-						name="ejemplares"
-					/>
-
 					<div class="d-flex mt-3">
-						<a type="button" class="btn btn-secondary me-2" th:href="@{/libro}">
+						<a type="button" class="btn btn-secondary me-2" th:href="@{/cliente}">
 							Volver
 						</a>
 						<button type="submit" class="btn btn-primary">Guardar</button>

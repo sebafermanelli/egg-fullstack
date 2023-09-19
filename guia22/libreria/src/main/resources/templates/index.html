@@ -14,7 +14,10 @@
 	</head>
 	<body>
 		<div class="row">
-			<div class="col-12 col-sm-3 col-md-2" th:insert="~{fragments/sidebar :: sidebar}"></div>
+			<div
+				class="col-12 col-sm-3 col-md-2"
+				th:insert="~{fragments/sidebar :: sidebar}"
+			></div>
 
 			<div class="col m-3">
 				<div class="d-flex">
@@ -26,45 +29,42 @@
 
 				<hr />
 
+				<div th:if="${exito != null}" class="alert alert-success" role="alert">
+					<span th:text="${exito}"></span>
+				</div>
+				<div th:if="${error != null}" class="alert alert-danger" role="alert">
+					<span th:text="${error}"></span>
+				</div>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-sm">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">Cliente</th>
+								<th scope="col">UUID</th>
 								<th scope="col">Libro</th>
+								<th scope="col">Cliente</th>
 								<th scope="col">Fecha prestamo</th>
-								<th scope="col">Fecha devolucion</th>
-								<th scope="col"></th>
 								<th scope="col"></th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody th:each="prestamo : ${prestamos}">
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<!-- <td>
-									<a
-										class="btn btn-secondary"
-										th:href="@{/prestamo/actualizar/{uuid}(uuid=${prestamo.uuid})}"
-									>
-										Actualizar
-									</a>
-								</td>
+								<td th:text="${prestamo.uuid}"></td>
+								<td th:text="${prestamo.libro.titulo}"></td>
+								<td th:text="${prestamo.cliente.dni}"></td>
+								<td th:text="${prestamo.fechaPrestamo}"></td>
 								<td>
 									<form
-										th:action="@{/prestamo/eliminar/{uuid}(uuid=${prestamo.uuid})}"
+										th:action="@{/prestamo/devolver/{uuid}(uuid=${prestamo.uuid})}"
 										method="post"
 									>
-										<input type="hidden" name="_method" value="delete" />
-										<button type="submit" class="btn btn-danger">
-											Eliminar
+										<input type="hidden" name="_method" value="put" />
+
+										<button type="submit" class="btn btn-warning">
+											Devolver
 										</button>
 									</form>
-								</td> -->
+								</td>
 							</tr>
 						</tbody>
 					</table>

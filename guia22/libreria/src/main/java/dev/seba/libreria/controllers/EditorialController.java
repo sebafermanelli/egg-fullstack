@@ -66,6 +66,7 @@ public class EditorialController {
       m.addAttribute("exito", "La editorial se edito con exito");
     } catch (MyException e) {
       m.addAttribute("error", e.getMessage());
+      return this.editoriales(m);
     }
 
     return this.editoriales(m);

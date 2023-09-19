@@ -1,6 +1,5 @@
 package dev.seba.libreria.services;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +10,6 @@ import dev.seba.libreria.entities.Autor;
 import dev.seba.libreria.entities.Editorial;
 import dev.seba.libreria.entities.Libro;
 import dev.seba.libreria.exceptions.MyException;
-import dev.seba.libreria.repositories.AutorRepository;
-import dev.seba.libreria.repositories.EditorialRepository;
 import dev.seba.libreria.repositories.LibroRepository;
 import jakarta.transaction.Transactional;
 
@@ -22,9 +19,9 @@ public class LibroService {
   @Autowired
   private LibroRepository libroRepository;
   @Autowired
-  private AutorRepository autorRepository;
+  private AutorService autorService;
   @Autowired
-  private EditorialRepository editorialRepository;
+  private EditorialService editorialService;
 
   @Transactional
   public void crearLibro(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditorial)
@@ -32,14 +29,13 @@ public class LibroService {
     this.validarLibro(isbn, titulo, ejemplares, idAutor, idEditorial);
 
     Libro l = new Libro();
-    Autor a = autorRepository.findById(idAutor).get();
-    Editorial e = editorialRepository.findById(idEditorial).get();
+    Autor a = autorService.obtenerAutorPorId(idAutor);
+    Editorial e = editorialService.obtenerEditorialPorId(idEditorial);
 
     l.setIsbn(isbn);
     l.setTitulo(titulo);
     l.setEjemplares(ejemplares);
     l.setPrestados(0);
-    l.setAlta(new Date());
 
     l.setAutor(a);
     l.setEditorial(e);
@@ -61,18 +57,49 @@ public class LibroService {
     this.validarLibro(isbn, titulo, ejemplares, idAutor, idEditorial);
 
     Optional<Libro> l = libroRepository.findById(isbn);
-    Optional<Autor> a = autorRepository.findById(idAutor);
-    Optional<Editorial> e = editorialRepository.findById(idEditorial);
+    Autor a = autorService.obtenerAutorPorId(idAutor);
+    Editorial e = editorialService.obtenerEditorialPorId(idEditorial);
 
-    if (l.isPresent() && a.isPresent() && e.isPresent()) {
+    if (l.isPresent() && a != null && e != null) {
       Libro libro = l.get();
-      Autor autor = a.get();
-      Editorial editorial = e.get();
 
       libro.setTitulo(titulo);
       libro.setEjemplares(ejemplares);
-      libro.setAutor(autor);
-      libro.setEditorial(editorial);
+      libro.setAutor(a);
+      libro.setEditorial(e);
+
+      libroRepository.save(libro);
+    }
+  }
+
+  @Transactional
+  public boolean prestarLibro(Long isbn) {
+
+    Optional<Libro> l = libroRepository.findById(isbn);
+
+    if (l.isPresent()) {
+      Libro libro = l.get();
+      if(libro.getPrestados() < libro.getEjemplares()) {
+        libro.setPrestados(libro.getPrestados() + 1);
+
+        libroRepository.save(libro);
+
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+    @Transactional
+  public void devolverLibro(Long isbn) {
+
+    Optional<Libro> l = libroRepository.findById(isbn);
+
+    if (l.isPresent()) {
+      Libro libro = l.get();
+
+      libro.setPrestados(libro.getPrestados() - 1);
 
       libroRepository.save(libro);
     }
@@ -101,10 +128,10 @@ public class LibroService {
       throw new MyException("ejemplares must not be null");
     }
     if (idAutor.isEmpty() || idAutor == null) {
-      throw new MyException("idAutor must not be empty or null");
+      throw new MyException("autor must not be empty or null");
     }
     if (idEditorial.isEmpty() || idEditorial == null) {
-      throw new MyException("idEditorial must not be empty or null");
+      throw new MyException("editorial must not be empty or null");
     }
   }
 }

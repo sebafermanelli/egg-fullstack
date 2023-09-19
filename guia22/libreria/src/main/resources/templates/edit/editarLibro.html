@@ -38,24 +38,6 @@
 						name="titulo"
 					/>
 
-					<label for="autor" class="form-label">Autor</label>
-					<input
-						type="text"
-						id="autor"
-						class="form-control"
-						th:value="${libro.autor.nombre}"
-						name="nombreAutor"
-					/>
-
-					<label for="editorial" class="form-label">Editorial</label>
-					<input
-						type="text"
-						id="editorial"
-						class="form-control"
-						th:value="${libro.editorial.nombre}"
-						name="nombreEditorial"
-					/>
-
 					<label for="ejemplares" class="form-label">Ejemplares</label>
 					<input
 						type="number"
@@ -64,6 +46,28 @@
 						th:value="${libro.ejemplares}"
 						name="ejemplares"
 					/>
+
+					<select class="form-select mt-3" aria-label="Autor" name="idAutor">
+						<option selected th:text="${libro.autor.nombre}" th:value="${libro.autor.uuid}"></option>
+						<option
+							th:each="autor : ${autores}"
+							th:text="${autor.nombre}"
+							th:value="${autor.uuid}"
+						></option>
+					</select>
+
+					<select
+						class="form-select mt-3"
+						aria-label="Editorial"
+						name="idEditorial"
+					>
+						<option selected th:text="${libro.editorial.nombre}" th:value="${libro.editorial.uuid}"></option>
+						<option
+							th:each="editorial : ${editoriales}"
+							th:text="${editorial.nombre}"
+							th:value="${editorial.uuid}"
+						></option>
+					</select>
 
 					<div class="d-flex mt-3">
 						<a type="button" class="btn btn-secondary me-2" th:href="@{/libro}">

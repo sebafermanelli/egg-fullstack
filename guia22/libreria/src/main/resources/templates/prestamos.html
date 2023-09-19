@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Autores - Admin Panel</title>
+		<title>Prestamos - Admin Panel</title>
 
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -14,13 +14,16 @@
 	</head>
 	<body>
 		<div class="row">
-			<div class="col-12 col-sm-3 col-md-2" th:insert="~{fragments/sidebar :: sidebar}"></div>
+			<div
+				class="col-12 col-sm-3 col-md-2"
+				th:insert="~{fragments/sidebar :: sidebar}"
+			></div>
 
 			<div class="col m-3">
 				<div class="d-flex">
-					<span class="fs-4">Autores</span>
-					<a class="btn btn-primary ms-3" th:href="@{/autor/crear}">
-						Crear autor
+					<span class="fs-4">Prestamos devueltos</span>
+					<a class="btn btn-primary ms-3" th:href="@{/prestamo/crear}">
+						Crear prestamo
 					</a>
 				</div>
 
@@ -38,26 +41,23 @@
 						<thead>
 							<tr>
 								<th scope="col">UUID</th>
-								<th scope="col">Nombre</th>
-								<th scope="col"></th>
+								<th scope="col">Libro</th>
+								<th scope="col">Cliente</th>
+								<th scope="col">Fecha prestamo</th>
+								<th scope="col">Fecha devolucion</th>
 								<th scope="col"></th>
 							</tr>
 						</thead>
-						<tbody th:each="autor : ${autores}">
+						<tbody th:each="prestamo : ${prestamos}">
 							<tr>
-								<td th:text="${autor.uuid}"></td>
-								<td th:text="${autor.nombre}"></td>
-								<td>
-									<a
-										class="btn btn-secondary"
-										th:href="@{/autor/actualizar/{uuid}(uuid=${autor.uuid})}"
-									>
-										Actualizar
-									</a>
-								</td>
+								<td th:text="${prestamo.uuid}"></td>
+								<td th:text="${prestamo.libro.titulo}"></td>
+								<td th:text="${prestamo.cliente.dni}"></td>
+								<td th:text="${prestamo.fechaPrestamo}"></td>
+								<td th:text="${prestamo.fechaDevolucion}"></td>
 								<td>
 									<form
-										th:action="@{/autor/eliminar/{uuid}(uuid=${autor.uuid})}"
+										th:action="@{/prestamo/eliminar/{uuid}(uuid=${prestamo.uuid})}"
 										method="post"
 									>
 										<input type="hidden" name="_method" value="delete" />

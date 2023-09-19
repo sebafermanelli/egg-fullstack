@@ -1,12 +1,8 @@
 package dev.seba.libreria.entities;
 
-import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 @Entity
 public class Libro {
@@ -19,9 +15,6 @@ public class Libro {
 
   private Integer prestados;
 
-  @Temporal(TemporalType.DATE)
-  private Date alta;
-
   @ManyToOne
   private Autor autor;
   @ManyToOne
@@ -29,10 +22,6 @@ public class Libro {
 
   public Libro() {
 
-  }
-
-  public Date getAlta() {
-    return alta;
   }
 
   public Autor getAutor() {
@@ -57,10 +46,6 @@ public class Libro {
 
   public String getTitulo() {
     return titulo;
-  }
-
-  public void setAlta(Date alta) {
-    this.alta = alta;
   }
 
   public void setAutor(Autor autor) {
