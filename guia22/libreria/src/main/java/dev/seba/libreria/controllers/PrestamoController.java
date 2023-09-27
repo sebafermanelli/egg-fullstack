@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import dev.seba.libreria.entities.Cliente;
 import dev.seba.libreria.entities.Libro;
 import dev.seba.libreria.entities.Prestamo;
+import dev.seba.libreria.entities.Usuario;
 import dev.seba.libreria.exceptions.MyException;
 import dev.seba.libreria.services.ClienteService;
 import dev.seba.libreria.services.LibroService;
 import dev.seba.libreria.services.PrestamoService;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/prestamo")
@@ -31,23 +33,36 @@ public class PrestamoController {
   ClienteService clienteService;
   @Autowired
   LibroService libroService;
-  @Autowired
-  IndexController indexController;
 
   @GetMapping("")
-  public String prestamos(Model m) {
+  public String prestamos(Model m, HttpSession session) {
     List<Prestamo> prestamos = prestamoService.listarPrestamosDevueltos();
+    Usuario logueado = (Usuario) session.getAttribute("usuariosession");
 
+    m.addAttribute("usuario", logueado);
     m.addAttribute("prestamos", prestamos);
 
     return "prestamos";
   }
 
+  @GetMapping("/activos")
+  public String index(Model m, HttpSession session) {
+    List<Prestamo> prestamos = prestamoService.listarPrestamosActivos();
+    Usuario logueado = (Usuario) session.getAttribute("usuariosession");
+
+    m.addAttribute("usuario", logueado);
+    m.addAttribute("prestamos", prestamos);
+
+    return "prestamosActivos";
+  }
+
   @GetMapping("/crear")
-  public String crearPrestamo(Model m) {
+  public String crearPrestamo(Model m, HttpSession session) {
     List<Cliente> clientes = clienteService.listarClientes();
     List<Libro> libros = libroService.listarLibros();
+    Usuario logueado = (Usuario) session.getAttribute("usuariosession");
 
+    m.addAttribute("usuario", logueado);
     m.addAttribute("clientes", clientes);
     m.addAttribute("libros", libros);
 
@@ -56,37 +71,44 @@ public class PrestamoController {
 
   @PostMapping("/registrar")
   public String register(
-      Model m,
-      @RequestParam String idCliente,
-      @RequestParam Long idLibro) {
+      Model m, @RequestParam String idCliente, @RequestParam Long idLibro, HttpSession session) {
+    Usuario logueado = (Usuario) session.getAttribute("usuariosession");
+    m.addAttribute("usuario", logueado);
+
     try {
       prestamoService.crearPrestamo(idCliente, idLibro);
       m.addAttribute("exito", "El prestamo se creo con exito");
     } catch (MyException e) {
       m.addAttribute("error", e.getMessage());
-      return indexController.index(m);
+      return this.index(m, session);
     }
-    return indexController.index(m);
+    return this.index(m, session);
   }
 
   @PutMapping("/devolver/{uuid}")
-  public String update(Model m, @PathVariable String uuid) {
+  public String update(Model m, @PathVariable String uuid, HttpSession session) {
+    Usuario logueado = (Usuario) session.getAttribute("usuariosession");
+    m.addAttribute("usuario", logueado);
+
     try {
       prestamoService.modificarPrestamo(uuid);
       m.addAttribute("exito", "El prestamo se devolvio con exito");
     } catch (MyException e) {
       m.addAttribute("error", e.getMessage());
-      return this.prestamos(m);
+      return this.prestamos(m, session);
     }
 
-    return indexController.index(m);
+    return this.index(m, session);
   }
 
   @DeleteMapping("/eliminar/{uuid}")
-  public String delete(Model m, @PathVariable String uuid) {
+  public String delete(Model m, @PathVariable String uuid, HttpSession session) {
     prestamoService.eliminarPrestamo(uuid);
+    Usuario logueado = (Usuario) session.getAttribute("usuariosession");
+
+    m.addAttribute("usuario", logueado);
     m.addAttribute("exito", "El prestamo se elimino con exito");
 
-    return this.prestamos(m);
+    return this.prestamos(m, session);
   }
 }

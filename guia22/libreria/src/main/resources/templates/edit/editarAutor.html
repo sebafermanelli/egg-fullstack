@@ -17,29 +17,17 @@
 			<div class="col-12 col-sm-3 col-md-2" th:insert="~{fragments/sidebar :: sidebar}"></div>
 
 			<div class="col m-3">
-				<span class="fs-4"
-					>Editar autor</span>
+				<span class="fs-4">Editar autor</span>
 
 				<hr />
 
-				<form
-					th:action="@{/autor/guardar/{uuid}(uuid=${autor.uuid})}"
-					method="post"
-				>
+				<form th:action="@{/autor/guardar/{uuid}(uuid=${autor.uuid})}" method="post">
 					<input type="hidden" name="_method" value="put" />
 
 					<label for="nombre" class="form-label">Nombre</label>
-					<input
-						type="text"
-						id="nombre"
-						class="form-control"
-						th:value="${autor.nombre}"
-						name="nombre"
-					/>
+					<input type="text" id="nombre" class="form-control" th:value="${autor.nombre}" name="nombre" />
 					<div class="d-flex mt-3">
-						<a type="button" class="btn btn-secondary me-2" th:href="@{/autor}">
-							Volver
-						</a>
+						<a type="button" class="btn btn-secondary me-2" th:href="@{/autor}"> Volver </a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</form>

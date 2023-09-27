@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Clientes - Admin Panel</title>
+		<title>Clientes</title>
 
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -19,9 +19,7 @@
 			<div class="col m-3">
 				<div class="d-flex">
 					<span class="fs-4">Clientes</span>
-					<a class="btn btn-primary ms-3" th:href="@{/cliente/crear}">
-						Crear cliente
-					</a>
+					<a class="btn btn-primary ms-3" th:href="@{/cliente/crear}"> Crear cliente </a>
 				</div>
 
 				<hr />
@@ -52,22 +50,14 @@
 								<td th:text="${cliente.nombre}"></td>
 								<td th:text="${cliente.telefono}"></td>
 								<td>
-									<a
-										class="btn btn-secondary"
-										th:href="@{/cliente/actualizar/{uuid}(uuid=${cliente.uuid})}"
-									>
+									<a class="btn btn-secondary" th:href="@{/cliente/actualizar/{uuid}(uuid=${cliente.uuid})}">
 										Actualizar
 									</a>
 								</td>
 								<td>
-									<form
-										th:action="@{/cliente/eliminar/{uuid}(uuid=${cliente.uuid})}"
-										method="post"
-									>
+									<form th:action="@{/cliente/eliminar/{uuid}(uuid=${cliente.uuid})}" method="post">
 										<input type="hidden" name="_method" value="delete" />
-										<button type="submit" class="btn btn-danger">
-											Eliminar
-										</button>
+										<button type="submit" class="btn btn-danger">Eliminar</button>
 									</form>
 								</td>
 							</tr>

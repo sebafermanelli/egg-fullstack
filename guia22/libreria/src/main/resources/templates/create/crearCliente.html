@@ -19,26 +19,14 @@
 			<div class="col m-3">
 				<span class="fs-4">Nuevo cliente</span>
 
-				<hr>
+				<hr />
 
 				<form action="/cliente/registrar" method="post">
 					<label for="dni" class="form-label">DNI</label>
-					<input
-						type="text"
-						id="dni"
-						class="form-control"
-						placeholder="Ingrese DNI del cliente"
-						name="dni"
-					/>
+					<input type="text" id="dni" class="form-control" placeholder="Ingrese DNI del cliente" name="dni" />
 
 					<label for="nombre" class="form-label">Nombre</label>
-					<input
-						type="text"
-						id="nombre"
-						class="form-control"
-						placeholder="Ingrese nombre del cliente"
-						name="nombre"
-					/>
+					<input type="text" id="nombre" class="form-control" placeholder="Ingrese nombre del cliente" name="nombre" />
 
 					<label for="telefono" class="form-label">Telefono</label>
 					<input
@@ -49,9 +37,7 @@
 						name="telefono"
 					/>
 					<div class="d-flex mt-3">
-						<a type="button" class="btn btn-secondary me-2" th:href="@{/cliente}">
-							Volver
-						</a>
+						<a type="button" class="btn btn-secondary me-2" th:href="@{/cliente}"> Volver </a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</form>

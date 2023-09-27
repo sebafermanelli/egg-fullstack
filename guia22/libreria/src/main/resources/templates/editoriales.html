@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Editoriales - Admin Panel</title>
+		<title>Editoriales</title>
 
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -19,9 +19,7 @@
 			<div class="col m-3">
 				<div class="d-flex">
 					<span class="fs-4">Editoriales</span>
-					<a class="btn btn-primary ms-3" th:href="@{/editorial/crear}">
-						Crear editorial
-					</a>
+					<a class="btn btn-primary ms-3" th:href="@{/editorial/crear}"> Crear editorial </a>
 				</div>
 
 				<hr />
@@ -48,22 +46,14 @@
 								<td th:text="${editorial.uuid}"></td>
 								<td th:text="${editorial.nombre}"></td>
 								<td>
-									<a
-										class="btn btn-secondary"
-										th:href="@{/editorial/actualizar/{uuid}(uuid=${editorial.uuid})}"
-									>
+									<a class="btn btn-secondary" th:href="@{/editorial/actualizar/{uuid}(uuid=${editorial.uuid})}">
 										Actualizar
 									</a>
 								</td>
 								<td>
-									<form
-										th:action="@{/editorial/eliminar/{uuid}(uuid=${editorial.uuid})}"
-										method="post"
-									>
+									<form th:action="@{/editorial/eliminar/{uuid}(uuid=${editorial.uuid})}" method="post">
 										<input type="hidden" name="_method" value="delete" />
-										<button type="submit" class="btn btn-danger">
-											Eliminar
-										</button>
+										<button type="submit" class="btn btn-danger">Eliminar</button>
 									</form>
 								</td>
 							</tr>

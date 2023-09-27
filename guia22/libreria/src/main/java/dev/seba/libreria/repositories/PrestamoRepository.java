@@ -11,9 +11,9 @@ import dev.seba.libreria.entities.Prestamo;
 @Repository
 public interface PrestamoRepository extends JpaRepository<Prestamo, String> {
 
-  @Query("select p from Prestamo p where p.fechaDevolucion = null")
+  @Query("SELECT p FROM Prestamo p WHERE p.fechaDevolucion = null")
   public List<Prestamo> buscarPorPrestamosActivos();
 
-    @Query("select p from Prestamo p where p.fechaDevolucion != null")
+    @Query("SELECT p FROM Prestamo p WHERE p.fechaDevolucion != null")
   public List<Prestamo> buscarPorPrestamosDevueltos();
 }

@@ -19,41 +19,21 @@
 			<div class="col m-3">
 				<span class="fs-4">Editar cliente</span>
 
-				<hr>
+				<hr />
 
 				<form th:action="@{/cliente/guardar/{uuid}(uuid=${cliente.uuid})}" method="post">
 					<input type="hidden" name="_method" value="put" />
 
 					<label for="dni" class="form-label">DNI</label>
-					<input
-						type="text"
-						id="dni"
-						class="form-control"
-						th:value="${cliente.dni}"
-						name="dni"
-					/>
+					<input type="text" id="dni" class="form-control" th:value="${cliente.dni}" name="dni" />
 
 					<label for="nombre" class="form-label">Nombre</label>
-					<input
-						type="text"
-						id="nombre"
-						class="form-control"
-						th:value="${cliente.nombre}"
-						name="nombre"
-					/>
+					<input type="text" id="nombre" class="form-control" th:value="${cliente.nombre}" name="nombre" />
 
 					<label for="telefono" class="form-label">Telefono</label>
-					<input
-						type="text"
-						id="telefono"
-						class="form-control"
-						th:value="${cliente.telefono}"
-						name="telefono"
-					/>
+					<input type="text" id="telefono" class="form-control" th:value="${cliente.telefono}" name="telefono" />
 					<div class="d-flex mt-3">
-						<a type="button" class="btn btn-secondary me-2" th:href="@{/cliente}">
-							Volver
-						</a>
+						<a type="button" class="btn btn-secondary me-2" th:href="@{/cliente}"> Volver </a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</form>

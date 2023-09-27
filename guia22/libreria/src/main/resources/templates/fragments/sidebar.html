@@ -1,18 +1,12 @@
-<nav
-	id="sidebarMenu"
-	class="d-md-block bg-dark sidebar"
-	th:fragment="sidebar"
-	style="height: 100vh"
->
+<nav id="sidebarMenu" class="d-md-block bg-dark sidebar" th:fragment="sidebar" style="height: 100vh">
 	<div class="position-sticky pt-3 text-center">
+		<span class="fs-4 text-white" th:text="${usuario.rol}"></span>
 
-		<span class="fs-4 text-white">Libreria</span>
-
-		<hr class="bg-white">
+		<hr class="bg-white" />
 
 		<ul class="nav flex-column">
 			<li class="nav-item btn btn-secondary my-1 mx-3">
-				<a href="/" class="nav-link text-white"> Inicio </a>
+				<a href="/prestamo/activos" class="nav-link text-white"> Inicio </a>
 			</li>
 			<li class="nav-item btn btn-secondary my-1 mx-3">
 				<a href="/libro" class="nav-link text-white"> Libros </a>
@@ -28,6 +22,10 @@
 			</li>
 			<li class="nav-item btn btn-secondary my-1 mx-3">
 				<a href="/prestamo" class="nav-link text-white"> Prestamos </a>
+			</li>
+
+			<li class="nav-item btn btn-danger my-1 mx-3">
+				<a th:href="@{/logout}" class="nav-link text-white"> Cerrar sesion </a>
 			</li>
 		</ul>
 	</div>

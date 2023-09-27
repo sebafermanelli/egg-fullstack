@@ -19,9 +19,7 @@
 			<div class="col m-3">
 				<div class="d-flex">
 					<span class="fs-4">Libros</span>
-					<a class="btn btn-primary ms-3" th:href="@{/libro/crear}">
-						Crear libro
-					</a>
+					<a class="btn btn-primary ms-3" th:href="@{/libro/crear}"> Crear libro </a>
 				</div>
 
 				<hr />
@@ -56,22 +54,14 @@
 								<td th:text="${libro.ejemplares}"></td>
 								<td th:text="${libro.prestados}"></td>
 								<td>
-									<a
-										class="btn btn-secondary"
-										th:href="@{/libro/actualizar/{isbn}(isbn=${libro.isbn})}"
-									>
+									<a class="btn btn-secondary" th:href="@{/libro/actualizar/{isbn}(isbn=${libro.isbn})}">
 										Actualizar
 									</a>
 								</td>
 								<td>
-									<form
-										th:action="@{/libro/eliminar/{isbn}(isbn=${libro.isbn})}"
-										method="post"
-									>
+									<form th:action="@{/libro/eliminar/{isbn}(isbn=${libro.isbn})}" method="post">
 										<input type="hidden" name="_method" value="delete" />
-										<button type="submit" class="btn btn-danger">
-											Eliminar
-										</button>
+										<button type="submit" class="btn btn-danger">Eliminar</button>
 									</form>
 								</td>
 							</tr>

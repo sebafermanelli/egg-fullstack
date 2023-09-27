@@ -14,10 +14,7 @@
 	</head>
 	<body>
 		<div class="row">
-			<div
-				class="col-12 col-sm-3 col-md-2"
-				th:insert="~{fragments/sidebar :: sidebar}"
-			></div>
+			<div class="col-12 col-sm-3 col-md-2" th:insert="~{fragments/sidebar :: sidebar}"></div>
 
 			<div class="col m-3">
 				<span class="fs-4">Nuevo prestamo</span>
@@ -25,36 +22,18 @@
 				<hr />
 
 				<form action="/prestamo/registrar" method="post">
-					<select
-						class="form-select mt-3"
-						aria-label="Cliente"
-						name="idCliente"
-					>
+					<select class="form-select mt-3" aria-label="Cliente" name="idCliente">
 						<option selected value="">Selecciona un cliente</option>
-						<option
-							th:each="cliente : ${clientes}"
-							th:text="${cliente.dni}"
-							th:value="${cliente.uuid}"
-						></option>
+						<option th:each="cliente : ${clientes}" th:text="${cliente.dni}" th:value="${cliente.uuid}"></option>
 					</select>
 
 					<select class="form-select mt-3" aria-label="Libro" name="idLibro">
 						<option selected value="">Selecciona un libro</option>
-						<option
-							th:each="libro : ${libros}"
-							th:text="${libro.titulo}"
-							th:value="${libro.isbn}"
-						></option>
+						<option th:each="libro : ${libros}" th:text="${libro.titulo}" th:value="${libro.isbn}"></option>
 					</select>
 
 					<div class="d-flex mt-3">
-						<a
-							type="button"
-							class="btn btn-secondary me-2"
-							th:href="@{/prestamo}"
-						>
-							Volver
-						</a>
+						<a type="button" class="btn btn-secondary me-2" th:href="@{/prestamo}"> Volver </a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</form>

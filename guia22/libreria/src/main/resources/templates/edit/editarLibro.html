@@ -17,50 +17,25 @@
 			<div class="col-12 col-sm-3 col-md-2" th:insert="~{fragments/sidebar :: sidebar}"></div>
 
 			<div class="col m-3">
-				<span class="fs-4"
-					>Editar libro <span th:text="${libro.isbn}"></span
-				></span>
+				<span class="fs-4">Editar libro <span th:text="${libro.isbn}"></span></span>
 
 				<hr />
 
-				<form
-					th:action="@{/libro/guardar/{isbn}(isbn=${libro.isbn})}"
-					method="post"
-				>
+				<form th:action="@{/libro/guardar/{isbn}(isbn=${libro.isbn})}" method="post">
 					<input type="hidden" name="_method" value="put" />
 
 					<label for="titulo" class="form-label">Titulo</label>
-					<input
-						type="text"
-						id="titulo"
-						class="form-control"
-						th:value="${libro.titulo}"
-						name="titulo"
-					/>
+					<input type="text" id="titulo" class="form-control" th:value="${libro.titulo}" name="titulo" />
 
 					<label for="ejemplares" class="form-label">Ejemplares</label>
-					<input
-						type="number"
-						id="ejemplares"
-						class="form-control"
-						th:value="${libro.ejemplares}"
-						name="ejemplares"
-					/>
+					<input type="number" id="ejemplares" class="form-control" th:value="${libro.ejemplares}" name="ejemplares" />
 
 					<select class="form-select mt-3" aria-label="Autor" name="idAutor">
 						<option selected th:text="${libro.autor.nombre}" th:value="${libro.autor.uuid}"></option>
-						<option
-							th:each="autor : ${autores}"
-							th:text="${autor.nombre}"
-							th:value="${autor.uuid}"
-						></option>
+						<option th:each="autor : ${autores}" th:text="${autor.nombre}" th:value="${autor.uuid}"></option>
 					</select>
 
-					<select
-						class="form-select mt-3"
-						aria-label="Editorial"
-						name="idEditorial"
-					>
+					<select class="form-select mt-3" aria-label="Editorial" name="idEditorial">
 						<option selected th:text="${libro.editorial.nombre}" th:value="${libro.editorial.uuid}"></option>
 						<option
 							th:each="editorial : ${editoriales}"
@@ -70,9 +45,7 @@
 					</select>
 
 					<div class="d-flex mt-3">
-						<a type="button" class="btn btn-secondary me-2" th:href="@{/libro}">
-							Volver
-						</a>
+						<a type="button" class="btn btn-secondary me-2" th:href="@{/libro}"> Volver </a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</form>
