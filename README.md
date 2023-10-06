@@ -18,9 +18,9 @@
 14. MySQL 
 15. JDBC 
 16. JPA 
-17. Integrador 
+17. Integrador Backend
 18. HTML & CSS 
 19. JavaScript
 20. React
-21. Integrador & Buenas prácticas de Java 
+21. Integrador Frontend & Buenas prácticas de Java 
 22. Spring
